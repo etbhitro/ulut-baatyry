@@ -1,0 +1,459 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Улут Баатыры — экосистема компаний</title>
+  <meta name="description" content="Улут Баатыры — экосистема компаний Кыргызстана: патриотический центр, туризм «Ынтымак Тур», «Белек Инвест», «Белек Авто» и эко-агро продукты.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Ccircle cx='24' cy='24' r='21' fill='none' stroke='%232b7fc4' stroke-width='3'/%3E%3Cpath d='M10 16q14 8 28 0M8 24q16 9 32 0M10 32q14 8 28 0' fill='none' stroke='%232b7fc4' stroke-width='2.5' transform='rotate(45 24 24)'/%3E%3Cpath d='M10 16q14 8 28 0M8 24q16 9 32 0M10 32q14 8 28 0' fill='none' stroke='%23d9a441' stroke-width='2.5' transform='rotate(-45 24 24)'/%3E%3C/svg%3E">
+</head>
+<body>
+
+  <!-- Логотип-тундук, переиспользуется через <use> -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="tunduk" viewBox="0 0 48 48">
+        <circle cx="24" cy="24" r="21" fill="none" stroke="currentColor" stroke-width="2.6"/>
+        <g fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" transform="rotate(45 24 24)">
+          <path d="M9 17q15 7 30 0"/><path d="M5 24q19 9 38 0"/><path d="M9 31q15 7 30 0"/>
+        </g>
+        <g fill="none" stroke="var(--gold)" stroke-width="2.2" stroke-linecap="round" transform="rotate(-45 24 24)">
+          <path d="M9 17q15 7 30 0"/><path d="M5 24q19 9 38 0"/><path d="M9 31q15 7 30 0"/>
+        </g>
+      </symbol>
+
+      <!-- Сокол (ак шумкар), стилизация по мотивам герба -->
+      <symbol id="falcon" viewBox="0 0 120 80">
+        <g fill="currentColor">
+          <ellipse cx="60" cy="14" rx="5.5" ry="6.5"/>
+          <path d="M64.5 11.5 L71 15 L64.5 17.5Z"/>
+          <path id="falconHalf" d="M60 19 L64 21 C72 21 86 13 112 4 L106 12 L116 11 L107 18 L116 19.5 L104 25 L111 28 L98 31 L103 35 L88 36 C80 37 73 39 68 43 C68.5 49 67.5 55 65 59 L74 70 L65 67 L60 74Z"/>
+          <use href="#falconHalf" transform="matrix(-1 0 0 1 120 0)"/>
+        </g>
+      </symbol>
+
+      <!-- Лавровая ветвь и венок -->
+      <g id="wreathL">
+        <path d="M46 91 A41 41 0 0 1 17 26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+        <g fill="currentColor">
+          <ellipse cx="34.95" cy="91.36" rx="6" ry="2.4" transform="rotate(165 34.95 91.36)"/><ellipse cx="37.69" cy="83.83" rx="6" ry="2.4" transform="rotate(235 37.69 83.83)"/>
+          <ellipse cx="21.71" cy="83.70" rx="6" ry="2.4" transform="rotate(185 21.71 83.70)"/><ellipse cx="26.85" cy="77.58" rx="6" ry="2.4" transform="rotate(255 26.85 77.58)"/>
+          <ellipse cx="11.90" cy="72.00" rx="6" ry="2.4" transform="rotate(205 11.90 72.00)"/><ellipse cx="18.82" cy="68.00" rx="6" ry="2.4" transform="rotate(275 18.82 68.00)"/>
+          <ellipse cx="6.66"  cy="57.64" rx="6" ry="2.4" transform="rotate(225 6.66 57.64)"/><ellipse cx="14.54" cy="56.26" rx="6" ry="2.4" transform="rotate(295 14.54 56.26)"/>
+          <ellipse cx="6.66"  cy="42.36" rx="6" ry="2.4" transform="rotate(245 6.66 42.36)"/><ellipse cx="14.54" cy="43.74" rx="6" ry="2.4" transform="rotate(315 14.54 43.74)"/>
+          <ellipse cx="11.90" cy="28.00" rx="6" ry="2.4" transform="rotate(265 11.90 28.00)"/><ellipse cx="18.82" cy="32.00" rx="6" ry="2.4" transform="rotate(335 18.82 32.00)"/>
+        </g>
+      </g>
+      <symbol id="wreath" viewBox="0 0 100 100">
+        <use href="#wreathL"/>
+        <use href="#wreathL" transform="matrix(-1 0 0 1 100 0)"/>
+      </symbol>
+
+      <symbol id="star" viewBox="0 0 24 24">
+        <path fill="currentColor" d="M12 2l2.9 6.2 6.8.8-5 4.6 1.3 6.7L12 17l-6 3.3 1.3-6.7-5-4.6 6.8-.8z"/>
+      </symbol>
+    </defs>
+  </svg>
+
+  <!-- ============ HEADER ============ -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="#top" class="logo" aria-label="Улут Баатыры — на главную">
+        <svg class="logo__mark"><use href="#tunduk"/></svg>
+        <span class="logo__text">Улут<br>Баатыры</span>
+      </a>
+      <nav class="nav" id="nav">
+        <a href="#ecosystem">Экосистема</a>
+        <a href="#patriot">Патриотический центр</a>
+        <a href="#tour">Ынтымак Тур</a>
+        <a href="#invest">Белек Инвест</a>
+        <a href="#auto">Белек Авто</a>
+        <a href="#agro">Эко-агро</a>
+      </nav>
+      <a href="#contact" class="btn btn--primary btn--sm header__cta">Связаться</a>
+      <button class="burger" id="burger" aria-label="Меню" aria-expanded="false"><span></span><span></span></button>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <div class="hero__sky">
+        <div class="hero__sun"></div>
+        <div class="cloud cloud--1"></div>
+        <div class="cloud cloud--2"></div>
+        <div class="cloud cloud--3"></div>
+        <div class="falcon falcon--1" aria-hidden="true"><svg viewBox="0 0 120 80"><use href="#falcon"/></svg></div>
+        <div class="falcon falcon--2" aria-hidden="true"><svg viewBox="0 0 120 80"><use href="#falcon"/></svg></div>
+      </div>
+
+      <div class="container hero__content">
+        <p class="eyebrow reveal"><span class="dot"></span> Экосистема компаний · Кыргызстан</p>
+        <h1 class="hero__title reveal">
+          <span class="line">Сила народа —</span>
+          <span class="line line--accent">в единстве</span>
+        </h1>
+        <p class="hero__lead reveal">
+          «Улут Баатыры» объединяет патриотическое воспитание, туризм, эко-агро продукты,
+          недвижимость и логистику, чтобы Кыргызстан рос сильным, открытым миру и верным своим корням.
+        </p>
+        <div class="hero__actions reveal">
+          <a href="#ecosystem" class="btn btn--primary">Узнать об экосистеме
+            <svg viewBox="0 0 24 24" width="18" height="18"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="#tour" class="btn btn--ghost">Подобрать тур</a>
+        </div>
+      </div>
+
+      <!-- Горы Тянь-Шаня, слои с параллаксом -->
+      <div class="mountains" aria-hidden="true">
+        <svg class="m m--back" data-speed="0.12" viewBox="0 0 1440 400" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="gBack" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#bcdcf5"/><stop offset="1" stop-color="#dcedfb"/></linearGradient>
+          </defs>
+          <path fill="url(#gBack)" d="M0 260 L120 170 L210 220 L330 110 L430 190 L560 80 L680 200 L790 130 L900 210 L1030 90 L1150 180 L1270 120 L1440 200 L1440 400 L0 400Z"/>
+          <path fill="#fff" opacity=".85" d="M330 110 L300 135 L322 132 L338 145 L352 128 L360 136Z M560 80 L525 112 L550 106 L566 122 L585 104 L600 112Z M1030 90 L995 120 L1020 115 L1036 130 L1052 112 L1068 120Z"/>
+        </svg>
+        <svg class="m m--mid" data-speed="0.22" viewBox="0 0 1440 400" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="gMid" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7fb6e3"/><stop offset="1" stop-color="#a9d0ef"/></linearGradient>
+          </defs>
+          <path fill="url(#gMid)" d="M0 300 L150 210 L260 260 L400 160 L520 250 L640 190 L760 270 L880 170 L1010 250 L1140 180 L1290 260 L1440 220 L1440 400 L0 400Z"/>
+          <path fill="#fff" opacity=".9" d="M400 160 L372 182 L392 178 L406 190 L420 176 L432 184Z M880 170 L852 192 L872 188 L886 200 L900 186 L912 194Z"/>
+        </svg>
+        <svg class="m m--front" data-speed="0.34" viewBox="0 0 1440 400" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="gFront" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3f86c4"/><stop offset="1" stop-color="#6aa7d9"/></linearGradient>
+          </defs>
+          <path fill="url(#gFront)" d="M0 340 L180 270 L320 320 L470 250 L620 330 L780 260 L940 320 L1100 255 L1260 320 L1440 280 L1440 400 L0 400Z"/>
+        </svg>
+        <div class="mountains__fade"></div>
+      </div>
+
+      <a href="#marquee" class="scroll-hint" aria-label="Листать вниз"><span></span></a>
+    </section>
+
+    <!-- ============ MARQUEE ============ -->
+    <div class="marquee" id="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>Патриотизм</span><i>✦</i><span>Туризм</span><i>✦</i><span>Эко-агро</span><i>✦</i><span>Недвижимость</span><i>✦</i><span>Логистика</span><i>✦</i><span>Авто</span><i>✦</i>
+        <span>Патриотизм</span><i>✦</i><span>Туризм</span><i>✦</i><span>Эко-агро</span><i>✦</i><span>Недвижимость</span><i>✦</i><span>Логистика</span><i>✦</i><span>Авто</span><i>✦</i>
+      </div>
+    </div>
+
+    <!-- ============ MISSION ============ -->
+    <section class="section mission">
+      <div class="container">
+        <div class="section__head reveal">
+          <p class="eyebrow"><span class="dot"></span> Наша миссия</p>
+          <h2 class="h2">Три опоры, на которых<br>мы строим будущее</h2>
+        </div>
+        <div class="pillars">
+          <article class="pillar reveal">
+            <div class="pillar__num">01</div>
+            <h3>Национальный дух</h3>
+            <p>Воспитываем молодёжь с уважением к истории, традициям и защитникам Родины.</p>
+          </article>
+          <article class="pillar reveal">
+            <div class="pillar__num">02</div>
+            <h3>Туризм Кыргызстана</h3>
+            <p>Открываем миру горы, озёра и культуру кочевников через авторские маршруты.</p>
+          </article>
+          <article class="pillar reveal">
+            <div class="pillar__num">03</div>
+            <h3>Чистые продукты</h3>
+            <p>Развиваем эко-агро направление: натуральные продукты с чистых высокогорных земель.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ECOSYSTEM ============ -->
+    <section class="section ecosystem" id="ecosystem">
+      <div class="container">
+        <div class="section__head reveal">
+          <p class="eyebrow"><span class="dot"></span> Экосистема</p>
+          <h2 class="h2">Одна команда —<br>четыре направления</h2>
+          <p class="section__lead">Каждая компания работает в своей сфере, а вместе они дают больше пользы людям и стране.</p>
+        </div>
+
+        <div class="bento">
+          <a href="#patriot" class="card card--main spot reveal" style="--accent: var(--sky-600)">
+            <svg class="card__falcon" viewBox="0 0 120 80" aria-hidden="true"><use href="#falcon"/></svg>
+            <div class="card__top">
+              <span class="tag">Основное направление</span>
+              <svg class="card__icon"><use href="#tunduk"/></svg>
+            </div>
+            <h3>Улут Баатыры</h3>
+            <p>Патриотический центр начальной военной подготовки и обучения молодёжи.</p>
+            <ul class="chips"><li>НВП</li><li>Военно-полевые сборы</li><li>История</li><li>Спорт</li></ul>
+            <span class="card__more">Подробнее →</span>
+          </a>
+
+          <a href="#tour" class="card spot reveal" style="--accent: var(--teal)">
+            <div class="card__top">
+              <span class="tag">Туризм</span>
+              <svg class="card__icon" viewBox="0 0 24 24"><path d="M3 20l6-10 4 6 3-4 5 8z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="17" cy="6" r="2" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>
+            </div>
+            <h3>Ынтымак Тур</h3>
+            <p>Авиа- и ж/д-билеты, авторские туры по Кыргызстану и за рубеж.</p>
+            <span class="card__more">Подробнее →</span>
+          </a>
+
+          <a href="#invest" class="card spot reveal" style="--accent: var(--indigo)">
+            <div class="card__top">
+              <span class="tag">Недвижимость · Логистика</span>
+              <svg class="card__icon" viewBox="0 0 24 24"><path d="M4 20V10l8-6 8 6v10M9 20v-6h6v6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+            </div>
+            <h3>Белек Инвест</h3>
+            <p>Агентство недвижимости и логистические услуги под ключ.</p>
+            <span class="card__more">Подробнее →</span>
+          </a>
+
+          <a href="#auto" class="card spot reveal" style="--accent: var(--coral)">
+            <div class="card__top">
+              <span class="tag">Авто</span>
+              <svg class="card__icon" viewBox="0 0 24 24"><path d="M3 15l2-6h14l2 6v4H3zM3 15h18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="7.5" cy="17" r="1.5" fill="currentColor"/><circle cx="16.5" cy="17" r="1.5" fill="currentColor"/></svg>
+            </div>
+            <h3>Белек Авто</h3>
+            <p>Автомобильное направление экосистемы. <em class="ph">Описание уточняется</em></p>
+            <span class="card__more">Подробнее →</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PATRIOT CENTER ============ -->
+    <section class="section patriot" id="patriot">
+      <div class="container ornament reveal" aria-hidden="true">
+        <span></span>
+        <svg viewBox="0 0 100 100"><use href="#wreath"/><use href="#star" x="40" y="38" width="20" height="20"/></svg>
+        <span></span>
+      </div>
+      <div class="container split">
+        <div class="split__media reveal">
+          <div class="photo photo--patriot">
+            <!-- Шеврон: щит, сокол, лычки, звезда, венок -->
+            <svg class="photo__crest" viewBox="0 0 200 200" aria-hidden="true">
+              <g class="crest__wreath"><use href="#wreath" width="200" height="200"/></g>
+              <path d="M100 38 L140 50 V92 C140 120 122 140 100 150 C78 140 60 120 60 92 V50 Z" fill="rgba(255,255,255,.08)" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/>
+              <path d="M100 46 L133 56 V92 C133 115 118 132 100 141 C82 132 67 115 67 92 V56 Z" fill="none" stroke="currentColor" stroke-opacity=".45" stroke-width="1"/>
+              <use href="#falcon" x="72" y="60" width="56" height="37"/>
+              <path d="M84 108 L100 116 L116 108 M84 118 L100 126 L116 118" fill="none" stroke="var(--gold)" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+              <g style="color: var(--gold)"><use href="#star" x="91" y="14" width="18" height="18"/></g>
+            </svg>
+            <span class="photo__ph">Фото центра</span>
+          </div>
+          <div class="float-badge">
+            <svg class="float-badge__star"><use href="#star"/></svg>
+            <strong>12–18</strong>
+            <span>возраст участников<br><em class="ph">уточнить</em></span>
+          </div>
+        </div>
+        <div class="split__text">
+          <p class="eyebrow reveal"><span class="dot"></span> Улут Баатыры</p>
+          <h2 class="h2 reveal">Патриотический центр начальной военной подготовки</h2>
+          <p class="reveal">Воспитываем сильных, дисциплинированных и ответственных граждан. Программы сочетают военную подготовку, физическую форму, знание истории и командный дух.</p>
+          <p class="motto reveal"><svg><use href="#star"/></svg> Дисциплина · Честь · Отвага · Единство <svg><use href="#star"/></svg></p>
+          <ul class="programs">
+            <li class="reveal"><span style="--n:1">01</span><div><h4>Начальная военная подготовка</h4><p>Строевая, тактика, основы безопасности.</p></div></li>
+            <li class="reveal"><span style="--n:2">02</span><div><h4>Полевые сборы и выживание</h4><p>Походы в горах, ориентирование, первая помощь.</p></div></li>
+            <li class="reveal"><span style="--n:3">03</span><div><h4>История и традиции</h4><p>Наследие Манаса, кочевая культура, герои народа.</p></div></li>
+            <li class="reveal"><span style="--n:4">04</span><div><h4>Спорт и национальные игры</h4><p>Физподготовка, кок-бору, ордо, единоборства.</p></div></li>
+          </ul>
+          <a href="#contact" class="btn btn--primary reveal">Записаться на программу</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TOUR ============ -->
+    <section class="section tour" id="tour">
+      <div class="container">
+        <div class="section__head section__head--row reveal">
+          <div>
+            <p class="eyebrow"><span class="dot dot--teal"></span> Ынтымак Тур</p>
+            <h2 class="h2">Откройте Кыргызстан<br>по-настоящему</h2>
+          </div>
+          <div class="tour__nav">
+            <button class="round-btn" data-dir="-1" aria-label="Назад">←</button>
+            <button class="round-btn" data-dir="1" aria-label="Вперёд">→</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="tours" id="tours">
+        <article class="tcard reveal">
+          <div class="tcard__img" style="--g1:#8fd3f4;--g2:#1f8fd1"><span class="tcard__days">5 дней</span></div>
+          <div class="tcard__body"><h3>Иссык-Куль</h3><p>Жемчужина Тянь-Шаня: побережье, горячие источники, ущелья.</p><div class="tcard__foot"><span>от <b>— сом</b></span><a href="#contact">Забронировать</a></div></div>
+        </article>
+        <article class="tcard reveal">
+          <div class="tcard__img" style="--g1:#b8e6c9;--g2:#2f9e8f"><span class="tcard__days">3 дня</span></div>
+          <div class="tcard__body"><h3>Сон-Куль</h3><p>Высокогорное озеро, юрточный лагерь и жизнь чабанов.</p><div class="tcard__foot"><span>от <b>— сом</b></span><a href="#contact">Забронировать</a></div></div>
+        </article>
+        <article class="tcard reveal">
+          <div class="tcard__img" style="--g1:#d6e9ff;--g2:#5a7fd6"><span class="tcard__days">1 день</span></div>
+          <div class="tcard__body"><h3>Ала-Арча</h3><p>Национальный парк в часе от Бишкека: ледники и тропы.</p><div class="tcard__foot"><span>от <b>— сом</b></span><a href="#contact">Забронировать</a></div></div>
+        </article>
+        <article class="tcard reveal">
+          <div class="tcard__img" style="--g1:#ffe3b8;--g2:#d9884a"><span class="tcard__days">4 дня</span></div>
+          <div class="tcard__body"><h3>Таш-Рабат</h3><p>Караван-сарай Великого шёлкового пути у границы с Китаем.</p><div class="tcard__foot"><span>от <b>— сом</b></span><a href="#contact">Забронировать</a></div></div>
+        </article>
+        <article class="tcard reveal">
+          <div class="tcard__img" style="--g1:#e0d4ff;--g2:#7a62c9"><span class="tcard__days">7 дней</span></div>
+          <div class="tcard__body"><h3>Авторский тур</h3><p>Маршрут под вас: от конных походов до гастро-туров.</p><div class="tcard__foot"><span>цена <b>по запросу</b></span><a href="#contact">Обсудить</a></div></div>
+        </article>
+      </div>
+
+      <div class="container">
+        <div class="services">
+          <div class="service reveal"><span class="service__ic">✈</span><h4>Авиабилеты</h4><p>Подбор и выкуп по лучшим тарифам</p></div>
+          <div class="service reveal"><span class="service__ic">🚆</span><h4>Ж/д билеты</h4><p>Внутренние и международные направления</p></div>
+          <div class="service reveal"><span class="service__ic">⛰</span><h4>Авторские туры</h4><p>Уникальные маршруты от наших гидов</p></div>
+          <div class="service reveal"><span class="service__ic">🛂</span><h4>Визовая поддержка</h4><p>Документы и сопровождение <em class="ph">уточнить</em></p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ BELEK INVEST ============ -->
+    <section class="section invest" id="invest">
+      <div class="container">
+        <div class="section__head reveal">
+          <p class="eyebrow"><span class="dot dot--indigo"></span> Белек Инвест</p>
+          <h2 class="h2">Надёжные решения<br>для жизни и бизнеса</h2>
+        </div>
+        <div class="duo">
+          <article class="panel spot reveal" style="--accent: var(--indigo)">
+            <div class="panel__visual panel__visual--estate">
+              <svg viewBox="0 0 200 120" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="2"><rect x="20" y="40" width="40" height="70" rx="3"/><rect x="70" y="15" width="50" height="95" rx="3"/><rect x="130" y="55" width="50" height="55" rx="3"/><path d="M30 55h20M30 70h20M30 85h20M80 30h30M80 45h30M80 60h30M80 75h30M80 90h30M140 70h30M140 85h30"/></g></svg>
+            </div>
+            <h3>Агентство недвижимости</h3>
+            <ul class="checks"><li>Покупка и продажа</li><li>Аренда жилой и коммерческой недвижимости</li><li>Юридическое сопровождение сделок</li><li>Оценка и консультации</li></ul>
+            <a href="#contact" class="link-arrow">Получить консультацию →</a>
+          </article>
+          <article class="panel spot reveal" style="--accent: var(--indigo)">
+            <div class="panel__visual panel__visual--logistics">
+              <svg viewBox="0 0 200 120" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="2"><path d="M15 85V45h90v40M105 60h35l20 20v5h-55"/><circle cx="40" cy="90" r="9"/><circle cx="135" cy="90" r="9"/><path d="M20 25c40-20 120-20 165 10" stroke-dasharray="4 6"/><circle cx="185" cy="35" r="4" fill="currentColor"/></g></svg>
+            </div>
+            <h3>Логистика</h3>
+            <ul class="checks"><li>Грузоперевозки по КР и СНГ</li><li>Таможенное оформление</li><li>Складские услуги</li><li>Доставка «от двери до двери»</li></ul>
+            <a href="#contact" class="link-arrow">Рассчитать доставку →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ BELEK AUTO ============ -->
+    <section class="section auto" id="auto">
+      <div class="container">
+        <div class="banner spot reveal" style="--accent: var(--coral)">
+          <div class="banner__text">
+            <p class="eyebrow"><span class="dot dot--coral"></span> Белек Авто</p>
+            <h2 class="h2">Автомобильное направление экосистемы</h2>
+            <p><em class="ph">Заглушка:</em> продажа, подбор, аренда или обслуживание автомобилей. Уточните, какие услуги оказывает Белек Авто, и мы заполним этот блок.</p>
+            <a href="#contact" class="btn btn--light">Оставить заявку</a>
+          </div>
+          <div class="banner__visual" aria-hidden="true">
+            <svg viewBox="0 0 320 160"><g fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 110h280M40 110l18-40c4-9 12-14 22-14h120c10 0 18 5 24 12l30 32 30 6c6 1 10 6 10 12v-8"/><path d="M90 56l-14 34h170"/><path d="M150 56v34"/></g><circle cx="90" cy="112" r="20" fill="none" stroke="currentColor" stroke-width="2.5"/><circle cx="240" cy="112" r="20" fill="none" stroke="currentColor" stroke-width="2.5"/></svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ AGRO ============ -->
+    <section class="section agro" id="agro">
+      <div class="container split split--rev">
+        <div class="split__text">
+          <p class="eyebrow reveal"><span class="dot dot--green"></span> Эко-агро</p>
+          <h2 class="h2 reveal">Экологически чистые продукты высокогорья</h2>
+          <p class="reveal">Поддерживаем фермеров и производителей Кыргызстана. Натуральное, без лишней химии, с заботой о земле.</p>
+          <div class="products">
+            <div class="product reveal"><span>🍯</span>Горный мёд</div>
+            <div class="product reveal"><span>🥛</span>Кымыз и молочные</div>
+            <div class="product reveal"><span>🌾</span>Зерновые</div>
+            <div class="product reveal"><span>🍎</span>Фрукты и сухофрукты</div>
+            <div class="product reveal"><span>🌿</span>Травяные чаи</div>
+            <div class="product reveal"><span>🥩</span>Мясо пастбищного выпаса</div>
+          </div>
+        </div>
+        <div class="split__media reveal">
+          <div class="photo photo--agro"><span class="photo__ph">Фото продукции</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ STATS ============ -->
+    <!-- ВНИМАНИЕ: цифры-заглушки, заменить реальными перед запуском -->
+    <section class="section stats">
+      <div class="container stats__grid">
+        <div class="stat reveal"><b data-count="4">0</b><span>направления в экосистеме</span></div>
+        <div class="stat reveal"><b data-count="500" data-suffix="+">0</b><span>выпускников центра <em class="ph">заглушка</em></span></div>
+        <div class="stat reveal"><b data-count="30" data-suffix="+">0</b><span>туристических маршрутов <em class="ph">заглушка</em></span></div>
+        <div class="stat reveal"><b data-count="7">0</b><span>областей Кыргызстана <em class="ph">заглушка</em></span></div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="section contact" id="contact">
+      <div class="container contact__grid">
+        <div class="contact__info">
+          <p class="eyebrow reveal"><span class="dot"></span> Контакты</p>
+          <h2 class="h2 reveal">Давайте строить<br>вместе</h2>
+          <p class="reveal">Оставьте заявку, и мы свяжемся с вами в течение рабочего дня.</p>
+          <ul class="contact__list reveal">
+            <li><span>Телефон</span><a href="#">+996 (000) 00-00-00</a></li>
+            <li><span>E-mail</span><a href="#">info@example.kg</a></li>
+            <li><span>Адрес</span><p>г. Бишкек, ул. —, д. —</p></li>
+          </ul>
+          <div class="socials reveal">
+            <a href="#" aria-label="Instagram">IG</a><a href="#" aria-label="Telegram">TG</a><a href="#" aria-label="WhatsApp">WA</a><a href="#" aria-label="Facebook">FB</a>
+          </div>
+        </div>
+        <form class="form reveal" id="form">
+          <label>Ваше имя<input type="text" name="name" placeholder="Азамат" required></label>
+          <label>Телефон<input type="tel" name="phone" placeholder="+996" required></label>
+          <label>Направление
+            <select name="direction">
+              <option>Патриотический центр</option>
+              <option>Ынтымак Тур</option>
+              <option>Белек Инвест — недвижимость</option>
+              <option>Белек Инвест — логистика</option>
+              <option>Белек Авто</option>
+              <option>Эко-агро продукты</option>
+              <option>Сотрудничество</option>
+            </select>
+          </label>
+          <label>Сообщение<textarea name="msg" rows="4" placeholder="Расскажите, чем мы можем помочь"></textarea></label>
+          <button class="btn btn--primary btn--full" type="submit">Отправить заявку</button>
+          <p class="form__ok" id="formOk" hidden>Спасибо! Заявка принята. <em class="ph">(демо: отправка пока не подключена)</em></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a href="#top" class="logo logo--light"><svg class="logo__mark"><use href="#tunduk"/></svg><span class="logo__text">Улут<br>Баатыры</span></a>
+        <p>Экосистема компаний для развития Кыргызстана.</p>
+        <p class="footer__motto"><svg><use href="#star"/></svg> Ата-Журт үчүн!</p>
+      </div>
+      <div class="footer__cols">
+        <div><h5>Экосистема</h5><a href="#patriot">Улут Баатыры</a><a href="#tour">Ынтымак Тур</a><a href="#invest">Белек Инвест</a><a href="#auto">Белек Авто</a></div>
+        <div><h5>Направления</h5><a href="#patriot">Патриотический центр</a><a href="#tour">Туризм</a><a href="#invest">Недвижимость</a><a href="#agro">Эко-агро</a></div>
+        <div><h5>Связь</h5><a href="#contact">Оставить заявку</a><a href="#">+996 (000) 00-00-00</a><a href="#">info@example.kg</a></div>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      <span>© <span id="year"></span> Улут Баатыры. Все права защищены.</span>
+      <span>Сделано с любовью к Кыргызстану</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
