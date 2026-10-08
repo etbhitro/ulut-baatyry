@@ -9,6 +9,14 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <script>
+    // Заставка с тундуком: показывается один раз за визит (до закрытия вкладки)
+    (function () {
+      var d = document.documentElement;
+      d.classList.add('js');
+      try { if (sessionStorage.getItem('introSeen')) d.classList.add('intro-seen'); } catch (e) {}
+    })();
+  </script>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Ccircle cx='24' cy='24' r='21' fill='none' stroke='%232b7fc4' stroke-width='3'/%3E%3Cpath d='M10 16q14 8 28 0M8 24q16 9 32 0M10 32q14 8 28 0' fill='none' stroke='%232b7fc4' stroke-width='2.5' transform='rotate(45 24 24)'/%3E%3Cpath d='M10 16q14 8 28 0M8 24q16 9 32 0M10 32q14 8 28 0' fill='none' stroke='%23d9a441' stroke-width='2.5' transform='rotate(-45 24 24)'/%3E%3C/svg%3E">
 </head>
 <body>
@@ -58,6 +66,19 @@
       </symbol>
     </defs>
   </svg>
+
+  <!-- ============ ЗАСТАВКА: тундук → «Улут Баатыры» ============ -->
+  <div class="intro" id="intro">
+    <button class="intro__btn" id="introBtn" type="button" aria-label="Открыть сайт «Улут Баатыры»">
+      <span class="intro__halo" aria-hidden="true"></span>
+      <svg class="intro__mark" viewBox="0 0 48 48" aria-hidden="true"><use href="#tunduk"/></svg>
+    </button>
+    <div class="intro__title" aria-hidden="true">
+      <strong>Улут Баатыры</strong>
+      <span>Герои нации</span>
+    </div>
+    <p class="intro__hint">Нажмите на тундук</p>
+  </div>
 
   <!-- ============ HEADER ============ -->
   <header class="header" id="header">

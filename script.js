@@ -2,6 +2,29 @@
 (() => {
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  // Заставка: тундук → «Улут Баатыры» → сайт
+  const intro = document.getElementById('intro');
+  const introBtn = document.getElementById('introBtn');
+  const root = document.documentElement;
+  const introActive = intro && !root.classList.contains('intro-seen');
+  const afterIntro = [];  // run once the site is visible
+  if (introActive) {
+    introBtn.focus({ preventScroll: true });
+    const openSite = () => {
+      try { sessionStorage.setItem('introSeen', '1'); } catch (e) {}
+      const finish = () => {
+        root.classList.add('intro-seen');
+        intro.remove();
+        afterIntro.forEach(fn => fn());
+      };
+      if (reduceMotion) { finish(); return; }
+      intro.classList.add('is-opening');
+      setTimeout(() => intro.classList.add('is-closing'), 1300);
+      setTimeout(finish, 2000);
+    };
+    introBtn.addEventListener('click', openSite, { once: true });
+  }
+
   // Шапка: фон при прокрутке
   const header = document.getElementById('header');
   const onScroll = () => header.classList.toggle('is-scrolled', window.scrollY > 30);
@@ -21,21 +44,24 @@
   }));
 
   // Появление элементов при прокрутке (с лёгкой задержкой для соседей)
-  const reveals = document.querySelectorAll('.reveal');
-  if ('IntersectionObserver' in window && !reduceMotion) {
-    const io = new IntersectionObserver(entries => {
-      entries.forEach(e => {
-        if (!e.isIntersecting) return;
-        const siblings = [...e.target.parentElement.children].filter(el => el.classList.contains('reveal'));
-        e.target.style.setProperty('--d', `${Math.min(siblings.indexOf(e.target), 6) * 0.08}s`);
-        e.target.classList.add('is-in');
-        io.unobserve(e.target);
-      });
-    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-    reveals.forEach(el => io.observe(el));
-  } else {
-    reveals.forEach(el => el.classList.add('is-in'));
-  }
+  const startReveals = () => {
+    const reveals = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window && !reduceMotion) {
+      const io = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+          if (!e.isIntersecting) return;
+          const siblings = [...e.target.parentElement.children].filter(el => el.classList.contains('reveal'));
+          e.target.style.setProperty('--d', `${Math.min(siblings.indexOf(e.target), 6) * 0.08}s`);
+          e.target.classList.add('is-in');
+          io.unobserve(e.target);
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+      reveals.forEach(el => io.observe(el));
+    } else {
+      reveals.forEach(el => el.classList.add('is-in'));
+    }
+  };
+  if (introActive) afterIntro.push(startReveals); else startReveals();
 
   // Параллакс гор
   const layers = document.querySelectorAll('.mountains .m');
