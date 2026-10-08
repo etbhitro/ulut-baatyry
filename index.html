@@ -481,6 +481,35 @@
     </div>
   </footer>
 
+  <!-- ============ ЧАТ С ПОМОЩНИКОМ ============ -->
+  <!-- data-api: адрес чата (бэкенд ulut-baatyry-agent). На сервере заменить на https://<домен>/api/chat -->
+  <div class="chat" id="chat" data-api="http://127.0.0.1:8000/api/chat">
+    <button class="chat__launcher" id="chatLauncher" type="button" aria-expanded="false" aria-controls="chatPanel">
+      <svg class="chat__launcher-icon" viewBox="0 0 48 48" aria-hidden="true"><use href="#tunduk"/></svg>
+      <span class="chat__launcher-text">Задать вопрос</span>
+    </button>
+
+    <section class="chat__panel" id="chatPanel" role="dialog" aria-label="Чат с помощником" hidden>
+      <header class="chat__head">
+        <svg class="chat__avatar" viewBox="0 0 48 48" aria-hidden="true"><use href="#tunduk"/></svg>
+        <div>
+          <strong>Помощник «Улут Баатыры»</strong>
+          <span>Цифровой помощник · отвечает сразу</span>
+        </div>
+        <button class="chat__close" id="chatClose" type="button" aria-label="Закрыть чат">×</button>
+      </header>
+      <div class="chat__log" id="chatLog" aria-live="polite"></div>
+      <form class="chat__form" id="chatForm">
+        <label class="form__hp" aria-hidden="true">Сайт<input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+        <textarea id="chatInput" name="message" rows="1" maxlength="1000" placeholder="Напишите сообщение…" required></textarea>
+        <button class="chat__send" type="submit" aria-label="Отправить">
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </form>
+      <p class="chat__foot">Удобнее в мессенджере? <a href="https://t.me/Ulut_Baatyry_bot" target="_blank" rel="noopener">Продолжить в Telegram</a></p>
+    </section>
+  </div>
+
   <script src="script.js"></script>
 </body>
 </html>

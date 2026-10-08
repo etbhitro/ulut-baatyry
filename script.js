@@ -157,5 +157,105 @@
     }
   });
 
+  // Чат с помощником → бэкенд (ulut-baatyry-agent, /api/chat)
+  const chat = document.getElementById('chat');
+  if (chat) {
+    const api = chat.dataset.api;
+    const launcher = document.getElementById('chatLauncher');
+    const panel = document.getElementById('chatPanel');
+    const log = document.getElementById('chatLog');
+    const chatForm = document.getElementById('chatForm');
+    const input = document.getElementById('chatInput');
+    const sendBtn = chatForm.querySelector('.chat__send');
+    const SESSION_KEY = 'ubChatSession';
+    const GREETING = 'Здравствуйте! Я цифровой помощник холдинга «Улут Баатыры». ' +
+      'Спросите о турах, недвижимости, инвестициях или автомобилях — подскажу и передам специалисту.';
+    let loaded = false;
+
+    // localStorage may be unavailable (private mode): the chat still works, just without memory.
+    const getSession = () => { try { return localStorage.getItem(SESSION_KEY); } catch (e) { return null; } };
+    const setSession = id => { try { localStorage.setItem(SESSION_KEY, id); } catch (e) {} };
+
+    const addMsg = (text, who) => {
+      const el = document.createElement('div');
+      el.className = `chat__msg chat__msg--${who}`;
+      el.textContent = text;
+      log.appendChild(el);
+      log.scrollTop = log.scrollHeight;
+      return el;
+    };
+
+    const loadHistory = async () => {
+      loaded = true;
+      const sid = getSession();
+      let messages = [];
+      if (sid) {
+        try {
+          const res = await fetch(`${api}/history?session_id=${encodeURIComponent(sid)}`);
+          if (res.ok) messages = (await res.json()).messages || [];
+        } catch (e) { /* offline: start with the greeting */ }
+      }
+      addMsg(GREETING, 'bot');
+      messages.forEach(m => addMsg(m.content, m.role === 'user' ? 'me' : 'bot'));
+    };
+
+    const open = () => {
+      panel.hidden = false;
+      chat.classList.add('is-open');
+      launcher.setAttribute('aria-expanded', 'true');
+      if (!loaded) loadHistory();
+      input.focus();
+    };
+    const close = () => {
+      panel.hidden = true;
+      chat.classList.remove('is-open');
+      launcher.setAttribute('aria-expanded', 'false');
+      launcher.focus();
+    };
+    launcher.addEventListener('click', open);
+    document.getElementById('chatClose').addEventListener('click', close);
+    panel.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
+
+    const autosize = () => { input.style.height = 'auto'; input.style.height = `${Math.min(input.scrollHeight, 120)}px`; };
+    input.addEventListener('input', autosize);
+    input.addEventListener('keydown', e => {
+      if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); chatForm.requestSubmit(); }
+    });
+
+    chatForm.addEventListener('submit', async e => {
+      e.preventDefault();
+      const text = input.value.trim();
+      if (!text || sendBtn.disabled) return;
+      addMsg(text, 'me');
+      input.value = '';
+      autosize();
+      sendBtn.disabled = true;
+      const typing = document.createElement('div');
+      typing.className = 'chat__typing';
+      typing.innerHTML = '<i></i><i></i><i></i>';
+      log.appendChild(typing);
+      log.scrollTop = log.scrollHeight;
+      try {
+        const res = await fetch(api, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ session_id: getSession(), message: text, website: chatForm.website.value }),
+        });
+        const data = await res.json().catch(() => ({}));
+        if (!res.ok) throw new Error(typeof data.detail === 'string' ? data.detail : 'Не удалось отправить сообщение.');
+        setSession(data.session_id);
+        addMsg(data.reply, 'bot');
+      } catch (err) {
+        addMsg(err instanceof TypeError
+          ? 'Нет связи. Проверьте интернет или напишите нам в Telegram.'
+          : err.message, 'err');
+      } finally {
+        typing.remove();
+        sendBtn.disabled = false;
+        input.focus();
+      }
+    });
+  }
+
   document.getElementById('year').textContent = new Date().getFullYear();
 })();
