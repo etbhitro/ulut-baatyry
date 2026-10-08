@@ -99,12 +99,36 @@
   }, { threshold: 0.5 });
   counters.forEach(c => countIO.observe(c));
 
-  // Форма (демо — отправка пока не подключена)
+  // Форма заявки → бэкенд (ulut-baatyry-agent, POST /api/leads)
   const form = document.getElementById('form');
-  form.addEventListener('submit', e => {
+  const formOk = document.getElementById('formOk');
+  const formErr = document.getElementById('formErr');
+  const submitBtn = form.querySelector('button[type="submit"]');
+  form.addEventListener('submit', async e => {
     e.preventDefault();
-    document.getElementById('formOk').hidden = false;
-    form.reset();
+    formOk.hidden = true;
+    formErr.hidden = true;
+    submitBtn.disabled = true;
+    try {
+      const res = await fetch(form.dataset.api, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(Object.fromEntries(new FormData(form))),
+      });
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        throw new Error(typeof data.detail === 'string' ? data.detail : 'Проверьте имя и телефон.');
+      }
+      formOk.hidden = false;
+      form.reset();
+    } catch (err) {
+      formErr.textContent = err instanceof TypeError
+        ? 'Не удалось отправить заявку. Проверьте интернет или напишите нам в Telegram.'
+        : err.message;
+      formErr.hidden = false;
+    } finally {
+      submitBtn.disabled = false;
+    }
   });
 
   document.getElementById('year').textContent = new Date().getFullYear();

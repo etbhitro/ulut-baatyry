@@ -409,14 +409,18 @@
             <li><span>Адрес</span><p>г. Бишкек, ул. —, д. —</p></li>
           </ul>
           <div class="socials reveal">
-            <a href="#" aria-label="Instagram">IG</a><a href="#" aria-label="Telegram">TG</a><a href="#" aria-label="WhatsApp">WA</a><a href="#" aria-label="Facebook">FB</a>
+            <a href="#" aria-label="Instagram">IG</a><a href="https://t.me/Ulut_Baatyry_bot" target="_blank" rel="noopener" aria-label="Telegram">TG</a><a href="#" aria-label="WhatsApp">WA</a><a href="#" aria-label="Facebook">FB</a>
           </div>
         </div>
-        <form class="form reveal" id="form">
-          <label>Ваше имя<input type="text" name="name" placeholder="Азамат" required></label>
-          <label>Телефон<input type="tel" name="phone" placeholder="+996" required></label>
+        <!-- data-api: адрес приёма заявок (бэкенд ulut-baatyry-agent). На сервере заменить на https://<домен>/api/leads -->
+        <form class="form reveal" id="form" data-api="http://127.0.0.1:8000/api/leads">
+          <label>Ваше имя<input type="text" name="name" placeholder="Азамат" required maxlength="100"></label>
+          <label>Телефон<input type="tel" name="phone" placeholder="+996" required maxlength="30"></label>
+          <!-- Ловушка для спам-ботов: людям не видно -->
+          <label class="form__hp" aria-hidden="true">Сайт<input type="text" name="website" tabindex="-1" autocomplete="off"></label>
           <label>Направление
             <select name="direction">
+              <option>Инвестиции и партнёрство</option>
               <option>Патриотический центр</option>
               <option>Ынтымак Тур</option>
               <option>Белек Инвест — недвижимость</option>
@@ -426,9 +430,11 @@
               <option>Сотрудничество</option>
             </select>
           </label>
-          <label>Сообщение<textarea name="msg" rows="4" placeholder="Расскажите, чем мы можем помочь"></textarea></label>
+          <label>Сообщение<textarea name="message" rows="4" maxlength="2000" placeholder="Расскажите, чем мы можем помочь"></textarea></label>
           <button class="btn btn--primary btn--full" type="submit">Отправить заявку</button>
-          <p class="form__ok" id="formOk" hidden>Спасибо! Заявка принята. <em class="ph">(демо: отправка пока не подключена)</em></p>
+          <p class="form__ok" id="formOk" hidden>Спасибо! Заявка принята, менеджер свяжется с вами в течение рабочего дня.</p>
+          <p class="form__ok form__ok--err" id="formErr" hidden></p>
+          <p class="form__alt">Или напишите нам в <a href="https://t.me/Ulut_Baatyry_bot" target="_blank" rel="noopener">Telegram</a> — ответим сразу.</p>
         </form>
       </div>
     </section>
@@ -445,7 +451,7 @@
       <div class="footer__cols">
         <div><h5>Экосистема</h5><a href="#patriot">Улут Баатыры</a><a href="#tour">Ынтымак Тур</a><a href="#invest">Белек Инвест</a><a href="#auto">Белек Авто</a></div>
         <div><h5>Направления</h5><a href="#patriot">Патриотический центр</a><a href="#tour">Туризм</a><a href="#invest">Недвижимость</a><a href="#agro">Эко-агро</a></div>
-        <div><h5>Связь</h5><a href="#contact">Оставить заявку</a><a href="#">+996 (000) 00-00-00</a><a href="#">info@example.kg</a></div>
+        <div><h5>Связь</h5><a href="#contact">Оставить заявку</a><a href="https://t.me/Ulut_Baatyry_bot" target="_blank" rel="noopener">Telegram-бот</a><a href="#">+996 (000) 00-00-00</a><a href="#">info@example.kg</a></div>
       </div>
     </div>
     <div class="container footer__bottom">

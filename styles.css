@@ -436,6 +436,11 @@ ul { margin: 0; padding: 0; list-style: none; }
 .form input:focus, .form select:focus, .form textarea:focus { outline: none; border-color: var(--sky-400); background: #fff; box-shadow: 0 0 0 4px rgba(43,127,196,.12); }
 .form textarea { resize: vertical; }
 .form__ok { margin: 0; padding: 14px; border-radius: 12px; background: #e9f7ef; color: #2f7a47; font-weight: 600; text-align: center; }
+.form__ok--err { background: #fdecea; color: #b3261e; }
+.form__hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.form__alt { margin: 0; font-size: .88rem; text-align: center; color: var(--muted, #5b6b7b); }
+.form__alt a { color: var(--sky-700); font-weight: 600; }
+.form button[disabled] { opacity: .6; cursor: progress; }
 
 /* ---------- Footer ---------- */
 .footer { background: var(--ink); color: rgba(255,255,255,.65); padding: 70px 0 30px; }
