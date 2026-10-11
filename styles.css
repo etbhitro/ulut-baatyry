@@ -391,6 +391,8 @@ a.lockup[href]:hover { opacity: .7; }
 .contact__list li { display: grid; gap: 2px; }
 .contact__list span { font-size: .8rem; font-weight: 600; text-transform: uppercase; letter-spacing: .1em; color: var(--ink-2); }
 .contact__list a, .contact__list p { font: 500 1.15rem var(--font-head); color: var(--ink); margin: 0; }
+.contact__list a { overflow-wrap: anywhere; }
+.contact__list a:hover { color: var(--sky-700); }
 .socials { display: flex; gap: 10px; }
 .socials a { display: grid; place-items: center; width: 46px; height: 46px; border-radius: 50%; background: #fff; box-shadow: var(--shadow); font-size: .78rem; font-weight: 700; color: var(--sky-700); transition: transform .3s var(--ease), background .3s, color .3s; }
 .socials a:hover { transform: translateY(-3px); background: var(--sky-600); color: #fff; }
