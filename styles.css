@@ -321,10 +321,8 @@ ul { margin: 0; padding: 0; list-style: none; }
 .lockup { display: inline-flex; align-items: center; height: 36px; color: #0E2D52; white-space: nowrap; transition: opacity .25s; }
 a.lockup[href]:hover { opacity: .7; }
 .lockup svg { flex: none; }
-/* «Ынтымак Тур»: морской синий + золото */
-.lockup--yntymak { gap: 10px; font: 700 1.05rem/1 'Unbounded', sans-serif; letter-spacing: .07em; text-transform: uppercase; }
-.lockup--yntymak svg { width: 40px; height: 40px; }
-/* Belek Invest: в файле логотипа поля по 20 px со всех сторон, убираем их отрицательным отступом */
+/* «Ынтымак Тур» и Belek Invest: в файлах логотипов поля по 20 px со всех сторон, убираем их отрицательным отступом */
+.lockup--yntymak img { height: 56px; width: auto; max-width: none; margin: -10px -14px; }
 .lockup--invest img { height: 64px; width: auto; max-width: none; margin: -14px -16px; }
 /* «Белек Авто»: тёмно-синий + сигнальный красный, Tektur Black, наклон -12° */
 .lockup--avto { gap: .233em; font: 900 25px/1 'Tektur', var(--font-head); text-transform: uppercase; color: #0E1B2C; transform: skewX(-12deg); }
