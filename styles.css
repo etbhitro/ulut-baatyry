@@ -27,6 +27,9 @@
   --ease: cubic-bezier(.22, .8, .2, 1);
 }
 
+/* В Unbounded нет кыргызских букв ө, ү, ң — для кыргызского текста заголовки набираются Montserrat */
+:lang(ky) { --font-head: "Montserrat", system-ui, sans-serif; }
+
 *, *::before, *::after { box-sizing: border-box; }
 html { scroll-behavior: smooth; scroll-padding-top: 90px; }
 body {
@@ -146,7 +149,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 .logo { display: flex; align-items: center; gap: 12px; color: var(--sky-600); }
 .logo__mark { width: 58px; height: 42px; transition: transform .5s var(--ease); }
 .logo:hover .logo__mark { transform: translateX(-4px); }
-.logo__text { font: 600 .9rem/1.05 var(--font-head); color: var(--ink); text-transform: uppercase; letter-spacing: .04em; }
+.logo__text { font: 600 .9rem/1.05 'Unbounded', sans-serif; color: var(--ink); text-transform: uppercase; letter-spacing: .04em; }
 .logo--light { color: var(--sky-300); }
 .logo--light .logo__text { color: #fff; }
 .nav { display: flex; gap: 4px; margin-left: auto; }
@@ -156,6 +159,11 @@ ul { margin: 0; padding: 0; list-style: none; }
 }
 .nav a:hover, .nav a.is-active { background: rgba(43,127,196,.1); color: var(--sky-700); }
 .burger { display: none; }
+/* Выбор языка */
+.lang { display: flex; gap: 2px; padding: 3px; border-radius: 100px; background: rgba(255,255,255,.65); box-shadow: inset 0 0 0 1px var(--line); }
+.lang button { padding: 6px 10px; border: 0; border-radius: 100px; background: none; cursor: pointer; font: 600 .78rem var(--font-body); letter-spacing: .04em; color: var(--ink-2); transition: background .25s, color .25s; }
+.lang button:hover { color: var(--sky-700); }
+.lang button[aria-pressed="true"] { background: var(--sky-600); color: #fff; }
 
 /* ---------- Hero ---------- */
 .hero {
@@ -313,16 +321,16 @@ ul { margin: 0; padding: 0; list-style: none; }
 .lockup { display: inline-flex; align-items: center; height: 36px; color: #0E2D52; white-space: nowrap; transition: opacity .25s; }
 a.lockup[href]:hover { opacity: .7; }
 .lockup svg { flex: none; }
-/* «Ынтымак Тур» и «Белек Нур Инвест»: морской синий + золото */
-.lockup--yntymak { gap: 10px; font: 700 1.05rem/1 var(--font-head); letter-spacing: .07em; text-transform: uppercase; }
+/* «Ынтымак Тур»: морской синий + золото */
+.lockup--yntymak { gap: 10px; font: 700 1.05rem/1 'Unbounded', sans-serif; letter-spacing: .07em; text-transform: uppercase; }
 .lockup--yntymak svg { width: 40px; height: 40px; }
-.lockup--belek { gap: 9px; font: 600 1.3rem/1 'Lora', serif; }
-.lockup--belek svg { width: 44px; height: 44px; }
-.lockup--belek small { display: block; margin-top: 4px; font: 700 .5rem/1 var(--font-body); letter-spacing: .5em; text-transform: uppercase; }
-/* «Белек Авто»: монохром тёмный, Tektur Black, наклон -12° */
+/* Belek Invest: в файле логотипа поля по 20 px со всех сторон, убираем их отрицательным отступом */
+.lockup--invest img { height: 64px; width: auto; max-width: none; margin: -14px -16px; }
+/* «Белек Авто»: тёмно-синий + сигнальный красный, Tektur Black, наклон -12° */
 .lockup--avto { gap: .233em; font: 900 25px/1 'Tektur', var(--font-head); text-transform: uppercase; color: #0E1B2C; transform: skewX(-12deg); }
 .lockup--avto i { display: flex; flex-direction: column; align-items: flex-end; gap: .117em; }
-.lockup--avto b { display: block; height: .15em; background: currentColor; }
+.lockup--avto b { display: block; height: .15em; background: #E63323; }
+.lockup--avto em { font-style: normal; color: #E63323; }
 .lockup--avto b:nth-child(1) { width: .9em; }
 .lockup--avto b:nth-child(2) { width: .633em; }
 .lockup--avto b:nth-child(3) { width: .367em; }
@@ -481,4 +489,11 @@ a.lockup[href]:hover { opacity: .7; }
   *, *::before, *::after { animation: none !important; transition: none !important; }
   html { scroll-behavior: auto; }
   .reveal { opacity: 1; transform: none; }
+}
+
+/* Язык на узких экранах: справа, рядом с меню */
+@media (max-width: 1080px) {
+  .header__inner { gap: 12px; }
+  .lang { margin-left: auto; }
+  .burger { margin-left: 0; }
 }

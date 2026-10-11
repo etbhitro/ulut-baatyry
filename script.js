@@ -1,6 +1,7 @@
 // Улут Баатыры — интерактив
 (() => {
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const t = window.ubT || (key => key);  // тексты на языке посетителя, см. i18n.js
 
   // Заставка: логотип → «Улут Баатыры» → сайт
   const intro = document.getElementById('intro');
@@ -91,7 +92,7 @@
 
   // Адреса страниц сервисов — заполнить здесь. Пока адрес пуст, карточка ведёт на форму контактов.
   const SERVICES = {
-    invest: '',  // Белек Нур Инвест
+    invest: '',  // Belek Invest
     tour: '',    // Ынтымак Тур
     auto: '',    // Белек Авто
     realty: '',  // Недвижимость и земли
@@ -122,13 +123,13 @@
       });
       if (!res.ok) {
         const data = await res.json().catch(() => ({}));
-        throw new Error(typeof data.detail === 'string' ? data.detail : 'Проверьте имя и телефон.');
+        throw new Error(typeof data.detail === 'string' ? data.detail : t('js.form_check'));
       }
       formOk.hidden = false;
       form.reset();
     } catch (err) {
       formErr.textContent = err instanceof TypeError
-        ? 'Не удалось отправить заявку. Проверьте интернет или напишите нам в Telegram.'
+        ? t('js.form_fail')
         : err.message;
       formErr.hidden = false;
     } finally {
@@ -147,8 +148,6 @@
     const input = document.getElementById('chatInput');
     const sendBtn = chatForm.querySelector('.chat__send');
     const SESSION_KEY = 'ubChatSession';
-    const GREETING = 'Здравствуйте! Я цифровой помощник центра «Улут Баатыры». ' +
-      'Спросите о программах, записи или сотрудничестве — подскажу и передам специалисту.';
     let loaded = false;
 
     // localStorage may be unavailable (private mode): the chat still works, just without memory.
@@ -174,7 +173,7 @@
           if (res.ok) messages = (await res.json()).messages || [];
         } catch (e) { /* offline: start with the greeting */ }
       }
-      addMsg(GREETING, 'bot');
+      addMsg(t('js.chat_greeting'), 'bot');
       messages.forEach(m => addMsg(m.content, m.role === 'user' ? 'me' : 'bot'));
     };
 
@@ -221,12 +220,12 @@
           body: JSON.stringify({ session_id: getSession(), message: text, website: chatForm.website.value }),
         });
         const data = await res.json().catch(() => ({}));
-        if (!res.ok) throw new Error(typeof data.detail === 'string' ? data.detail : 'Не удалось отправить сообщение.');
+        if (!res.ok) throw new Error(typeof data.detail === 'string' ? data.detail : t('js.chat_fail'));
         setSession(data.session_id);
         addMsg(data.reply, 'bot');
       } catch (err) {
         addMsg(err instanceof TypeError
-          ? 'Нет связи. Проверьте интернет или напишите нам в Telegram.'
+          ? t('js.chat_offline')
           : err.message, 'err');
       } finally {
         typing.remove();
