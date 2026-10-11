@@ -82,11 +82,8 @@
         <span class="logo__text">Улут-<br>Баатыры</span>
       </a>
       <nav class="nav" id="nav">
-        <a href="#about">О холдинге</a>
         <a href="#tourism">Туризм</a>
         <a href="#patriot">Лагерь</a>
-        <a href="#invest">Инвесторам</a>
-        <a href="#services">Сервисы</a>
         <a href="#contact">Контакты</a>
       </nav>
       <a href="#contact" class="btn btn--primary btn--sm header__cta">Связаться</a>
@@ -97,11 +94,13 @@
   <main id="top">
     <!-- ============ HERO ============ -->
     <section class="hero">
+      <!-- Иссык-Куль: фото на весь первый экран -->
       <div class="hero__sky">
-        <div class="hero__sun"></div>
-        <div class="cloud cloud--1"></div>
-        <div class="cloud cloud--2"></div>
-        <div class="cloud cloud--3"></div>
+        <img class="hero__photo" data-speed="0.14"
+             src="assets/hero-issyk-kul-2560.jpg"
+             srcset="assets/hero-issyk-kul-1400.jpg 1400w, assets/hero-issyk-kul-2560.jpg 2560w"
+             sizes="max(100vw, 229vh)" width="2560" height="1118"
+             alt="" fetchpriority="high" decoding="async">
         <div class="falcon falcon--1" aria-hidden="true"><svg viewBox="0 0 120 80"><use href="#falcon"/></svg></div>
         <div class="falcon falcon--2" aria-hidden="true"><svg viewBox="0 0 120 80"><use href="#falcon"/></svg></div>
       </div>
@@ -123,46 +122,7 @@
         </div>
       </div>
 
-      <!-- Горы Тянь-Шаня, слои с параллаксом -->
-      <div class="mountains" aria-hidden="true">
-        <svg class="m m--back" data-speed="0.12" viewBox="0 0 1440 400" preserveAspectRatio="none">
-          <defs>
-            <linearGradient id="gBack" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#bcdcf5"/><stop offset="1" stop-color="#dcedfb"/></linearGradient>
-          </defs>
-          <path fill="url(#gBack)" d="M0 260 L120 170 L210 220 L330 110 L430 190 L560 80 L680 200 L790 130 L900 210 L1030 90 L1150 180 L1270 120 L1440 200 L1440 400 L0 400Z"/>
-          <path fill="#fff" opacity=".85" d="M330 110 L300 135 L322 132 L338 145 L352 128 L360 136Z M560 80 L525 112 L550 106 L566 122 L585 104 L600 112Z M1030 90 L995 120 L1020 115 L1036 130 L1052 112 L1068 120Z"/>
-        </svg>
-        <svg class="m m--mid" data-speed="0.22" viewBox="0 0 1440 400" preserveAspectRatio="none">
-          <defs>
-            <linearGradient id="gMid" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7fb6e3"/><stop offset="1" stop-color="#a9d0ef"/></linearGradient>
-          </defs>
-          <path fill="url(#gMid)" d="M0 300 L150 210 L260 260 L400 160 L520 250 L640 190 L760 270 L880 170 L1010 250 L1140 180 L1290 260 L1440 220 L1440 400 L0 400Z"/>
-          <path fill="#fff" opacity=".9" d="M400 160 L372 182 L392 178 L406 190 L420 176 L432 184Z M880 170 L852 192 L872 188 L886 200 L900 186 L912 194Z"/>
-        </svg>
-        <svg class="m m--front" data-speed="0.34" viewBox="0 0 1440 400" preserveAspectRatio="none">
-          <defs>
-            <linearGradient id="gFront" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3f86c4"/><stop offset="1" stop-color="#6aa7d9"/></linearGradient>
-          </defs>
-          <path fill="url(#gFront)" d="M0 340 L180 270 L320 320 L470 250 L620 330 L780 260 L940 320 L1100 255 L1260 320 L1440 280 L1440 400 L0 400Z"/>
-        </svg>
-        <div class="mountains__fade"></div>
-      </div>
-
       <a href="#patriot" class="scroll-hint" aria-label="Листать вниз"><span></span></a>
-    </section>
-
-    <!-- ============ О ХОЛДИНГЕ ============ -->
-    <section class="section about" id="about">
-      <div class="container">
-        <div class="section__head reveal">
-          <p class="eyebrow"><span class="dot"></span> О холдинге</p>
-          <h2 class="h2">Холдинг «Улут-Баатыры»</h2>
-        </div>
-        <div class="about__text">
-          <p class="reveal">«Улут-Баатыры» («Герои нации») — холдинг, который развивает туризм и воспитывает молодых патриотов Кыргызстана.</p>
-          <p class="reveal about__lead">Возглавляет холдинг Азамат.</p>
-        </div>
-      </div>
     </section>
 
     <!-- ============ ТУРИЗМ ============ -->
@@ -256,100 +216,6 @@
       </div>
     </section>
 
-    <!-- ============ ИНВЕСТОРАМ И ПАРТНЁРАМ ============ -->
-    <section class="section invest" id="invest">
-      <div class="container">
-        <div class="section__head reveal">
-          <p class="eyebrow"><span class="dot"></span> Инвесторам и партнёрам</p>
-          <h2 class="h2">Вложиться в дело, которое останется на десятилетия</h2>
-          <p class="section__lead">Приглашаем вложиться в дело, которое останется в стране на десятилетия.</p>
-        </div>
-        <div class="invest__grid">
-          <div class="invest__card reveal">
-            <h3>Куда можно вложиться</h3>
-            <ul class="checklist">
-              <li>Туристический комплекс и агротуризм</li>
-              <li>Лагерь и его инфраструктура</li>
-              <li>Мероприятия «Улубатыры»</li>
-              <li>Обучение и подготовка молодёжи</li>
-              <li>Земельные участки и готовые проекты</li>
-            </ul>
-          </div>
-          <div class="invest__card reveal">
-            <h3>Что получает партнёр</h3>
-            <p>Участие в значимом проекте, открытая отчётность и место среди тех, кто стоял у истоков.</p>
-            <p class="invest__terms">Условия участия обсуждаются индивидуально и закрепляются договором.</p>
-            <a href="#contact" class="btn btn--primary">Связаться с холдингом</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ НАШИ СЕРВИСЫ ============ -->
-    <!-- Адреса сервисов задаются в одном месте: объект SERVICES в script.js. Пока адрес пуст, карточка ведёт на форму контактов -->
-    <section class="section services" id="services">
-      <div class="container">
-        <div class="section__head reveal">
-          <p class="eyebrow"><span class="dot"></span> Наши сервисы</p>
-          <h2 class="h2">Наши сервисы</h2>
-          <p class="section__lead">Партнёрские компании и сервисы работают самостоятельно. У каждого своя страница.</p>
-        </div>
-        <div class="cards cards--4">
-          <a class="card service reveal" href="#contact" data-service="invest">
-            <span class="partner__logo" aria-hidden="true">БН</span>
-            <h3>Белек Нур Инвест</h3>
-            <p>Привлечение средств от партнёров</p>
-          </a>
-          <a class="card service reveal" href="#contact" data-service="tour">
-            <span class="partner__logo" aria-hidden="true">ЫТ</span>
-            <h3>Ынтымак Тур</h3>
-            <p>Туры и путешествия под ключ</p>
-          </a>
-          <a class="card service reveal" href="#contact" data-service="auto">
-            <span class="partner__logo" aria-hidden="true">БА</span>
-            <h3>Белек Авто</h3>
-            <p>Автомобили в рассрочку</p>
-          </a>
-          <a class="card service reveal" href="#contact" data-service="realty">
-            <span class="partner__logo" aria-hidden="true">НЗ</span>
-            <h3>Недвижимость и земли</h3>
-            <p>Недвижимость, участки, готовые проекты</p>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ НАШИ СЕРВИСЫ ============ -->
-    <!-- Адреса сервисов — в одном месте: объект SERVICES в script.js. Пока адрес пуст, карточка ведёт на форму контактов.
-         Знаки: «Ынтымак Тур» и «Белек Нур Инвест» — из ребрендинга (варианты 1b и 1e); «Белек Авто» — из пака нового логотипа (полосы + Tektur Black, наклон -12°) -->
-    <section class="section partners" id="services">
-      <div class="container">
-        <div class="section__head reveal">
-          <p class="eyebrow"><span class="dot"></span> Наши сервисы</p>
-          <h2 class="h2">Наши сервисы</h2>
-          <p class="section__lead">Партнёрские компании и сервисы работают самостоятельно. У каждого своя страница.</p>
-        </div>
-        <div class="partners__grid partners__grid--4">
-          <a class="partner service reveal" href="#contact" data-service="invest">
-            <span class="partner__logo" aria-hidden="true">БН</span>
-            <h3>Белек Нур Инвест</h3>
-            <p>Привлечение средств от партнёров</p>
-          </a>
-          <a class="partner service reveal" href="#contact" data-service="tour">
-            <svg class="partner__mark" viewBox="0 0 100 100" aria-hidden="true">
-              <path d="M49 5V12" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
-              <g fill="currentColor">
-                <path d="M18 26H33Q38 41 33 56H18Q23 41 18 26Z"/>
-                <path d="M40 12H58Q64 34 58 56H40Q46 34 40 12Z"/>
-                <path d="M66 28H80Q85 42 80 56H66Q71 42 66 28Z"/>
-                <path d="M86 32Q92 44 95 56H86Z"/>
-                <path d="M8 62H94Q86 78 68 78H32Q14 78 8 62Z"/>
-              </g>
-              <path d="M49 3L59 6.5L49 10Z" fill="var(--brand-gold)"/>
-              <path d="M10 91q10 -6 20 0t20 0t20 0t20 0" fill="none" stroke="var(--brand-gold)" stroke-width="5" stroke-linecap="round"/>
-            </svg>
-    <!-- ============ CONTACT ============ -->
-
     <!-- ============ CONTACT ============ -->
     <section class="section contact" id="contact">
       <div class="container contact__grid">
@@ -391,16 +257,63 @@
     </section>
   </main>
 
+  <!-- ============ ПАРТНЁРЫ ============ -->
+  <!-- Строка партнёров по паку «Белек Авто × Улут Баатыры»: высота 36 px, «Белек Авто» — монохром тёмный.
+       Знаки «Ынтымак Тур» и «Белек Нур Инвест» — из ребрендинга (горизонтальные версии 1b и 1e).
+       Адреса сайтов партнёров — объект SERVICES в script.js; пока адрес пуст, логотип не кликается.
+       Готовые баннеры и PNG «Белек Авто» лежат в assets/partners/belek-auto/ -->
+  <section class="strip" aria-label="Партнёры">
+    <div class="container">
+      <div class="strip__inner reveal">
+        <p class="strip__label">Партнёры</p>
+        <div class="strip__logos">
+          <a class="lockup lockup--yntymak service" data-service="tour" title="Ынтымак Тур">
+            <svg viewBox="0 0 100 100" aria-hidden="true">
+              <path d="M49 5V12" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
+              <g fill="currentColor">
+                <path d="M18 26H33Q38 41 33 56H18Q23 41 18 26Z"/>
+                <path d="M40 12H58Q64 34 58 56H40Q46 34 40 12Z"/>
+                <path d="M66 28H80Q85 42 80 56H66Q71 42 66 28Z"/>
+                <path d="M86 32Q92 44 95 56H86Z"/>
+                <path d="M8 62H94Q86 78 68 78H32Q14 78 8 62Z"/>
+              </g>
+              <path d="M49 3L59 6.5L49 10Z" fill="#C3922E"/>
+              <path d="M10 91q10 -6 20 0t20 0t20 0t20 0" fill="none" stroke="#C3922E" stroke-width="5" stroke-linecap="round"/>
+            </svg>
+            <span>Ынтымак Тур</span>
+          </a>
+          <a class="lockup lockup--belek service" data-service="invest" title="Белек Нур Инвест">
+            <svg viewBox="0 0 100 100" aria-hidden="true">
+              <g stroke="#C3922E" stroke-width="5" stroke-linecap="round">
+                <line x1="50" y1="21" x2="50" y2="12" transform="rotate(-60 50 46)"/><line x1="50" y1="21" x2="50" y2="12" transform="rotate(-40 50 46)"/><line x1="50" y1="21" x2="50" y2="12" transform="rotate(-20 50 46)"/><line x1="50" y1="21" x2="50" y2="12"/><line x1="50" y1="21" x2="50" y2="12" transform="rotate(20 50 46)"/><line x1="50" y1="21" x2="50" y2="12" transform="rotate(40 50 46)"/><line x1="50" y1="21" x2="50" y2="12" transform="rotate(60 50 46)"/>
+              </g>
+              <circle cx="50" cy="37" r="3.5" fill="currentColor"/>
+              <g fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="50" cy="46" r="18"/><path d="M50 44V56M43 42L50 48L57 42"/>
+                <path d="M46 90C28 88 18 72 24 42M54 90C72 88 82 72 76 42M44 80C36 78 31 72 31 64M56 80C64 78 69 72 69 64"/>
+              </g>
+            </svg>
+            <span>Белек Нур<small>Инвест</small></span>
+          </a>
+          <a class="lockup lockup--avto service" data-service="auto" title="Белек Авто">
+            <i aria-hidden="true"><b></b><b></b><b></b></i>
+            <span>БелекАвто</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ============ FOOTER ============ -->
   <footer class="footer">
     <div class="container footer__inner">
       <div class="footer__brand">
-        <a href="#top" class="logo logo--light"><svg class="logo__mark"><use href="#horseman"/></svg><span class="logo__text">Улут<br>Баатыры</span></a>
+        <a href="#top" class="logo logo--light"><svg class="logo__mark"><use href="#horseman"/></svg><span class="logo__text">Улут-<br>Баатыры</span></a>
         <p>Холдинг: туризм и патриотическое воспитание молодёжи.</p>
         <p class="footer__motto"><svg><use href="#star"/></svg> Ата-Журт үчүн!</p>
       </div>
       <div class="footer__cols">
-        <div><h5>Сайт</h5><a href="#about">О холдинге</a><a href="#tourism">Туризм</a><a href="#patriot">Лагерь</a><a href="#invest">Инвесторам</a><a href="#services">Сервисы</a><a href="#contact">Контакты</a></div>
+        <div><h5>Сайт</h5><a href="#tourism">Туризм</a><a href="#patriot">Лагерь</a><a href="#contact">Контакты</a></div>
         <div><h5>Связь</h5><a href="#contact">Оставить заявку</a><a href="https://t.me/Ulut_Baatyry_bot" target="_blank" rel="noopener">Telegram-бот</a><a href="#">+996 (000) 00-00-00</a><a href="#">info@example.kg</a></div>
       </div>
     </div>

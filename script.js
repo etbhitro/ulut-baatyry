@@ -63,8 +63,8 @@
   };
   if (introActive) afterIntro.push(startReveals); else startReveals();
 
-  // Параллакс гор
-  const layers = document.querySelectorAll('.mountains .m');
+  // Параллакс фото в первом экране
+  const layers = document.querySelectorAll('.hero__photo');
   if (!reduceMotion && layers.length) {
     let ticking = false;
     window.addEventListener('scroll', () => {
