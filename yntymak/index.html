@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ынтымак Тур — туры по Кыргызстану</title>
+  <meta name="description" content="Ынтымак Тур: туры по Кыргызстану под ключ. Иссык-Куль, Сон-Куль, Ала-Арча, Каракол, Сары-Челек, Арсланбоб.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="../assets/partners/yntymak-tour/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+  <!-- ============ HEADER ============ -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="#top" class="brand" aria-label="Ынтымак Тур — в начало">
+        <img src="../assets/partners/yntymak-tour/yntymak-tour-logo-horizontal.svg" alt="Ынтымак Тур" width="371" height="80">
+      </a>
+      <nav class="nav">
+        <a href="#tours">Направления</a>
+        <a href="#included">Что входит</a>
+        <a href="#request">Заявка</a>
+      </nav>
+      <a href="#request" class="btn btn--primary btn--sm">Подобрать тур</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- ============ HERO ============ -->
+    <!-- Фото первого экрана: пока панорама Иссык-Куля с сайта холдинга. Своё фото — заменить src у .hero__photo -->
+    <section class="hero">
+      <img class="hero__photo" src="../assets/hero-issyk-kul-2560.jpg"
+           srcset="../assets/hero-issyk-kul-1400.jpg 1400w, ../assets/hero-issyk-kul-2560.jpg 2560w"
+           sizes="max(100vw, 229vh)" width="2560" height="1118" alt="" fetchpriority="high">
+      <div class="container hero__content">
+        <p class="eyebrow">Внутренние туры</p>
+        <h1>Туры по Кыргызстану</h1>
+        <p class="hero__lead">Озёра, горы и джайлоо. Маршрут, транспорт и проживание под ключ.</p>
+        <div class="hero__actions">
+          <a href="#request" class="btn btn--primary">Подобрать тур</a>
+          <a href="#tours" class="btn btn--light">Смотреть направления</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ НАПРАВЛЕНИЯ ============ -->
+    <!-- Фото локации: положить файл в yntymak/img/<имя>.jpg и заменить блок .place__ph на
+         <img src="img/<имя>.jpg" alt="..." loading="lazy">. Новое направление = ещё одна <article class="place">. -->
+    <section class="section" id="tours">
+      <div class="container">
+        <p class="eyebrow eyebrow--dark">Направления</p>
+        <div class="places">
+          <article class="place">
+            <div class="place__media"><div class="place__ph"><span>Фото скоро</span></div></div>
+            <div class="place__body">
+              <h3>Иссык-Куль</h3>
+              <p>Горное озеро, пляжи и ущелья побережья.</p>
+              <a href="#request" data-place="Иссык-Куль">Хочу сюда →</a>
+            </div>
+          </article>
+          <article class="place">
+            <div class="place__media"><div class="place__ph"><span>Фото скоро</span></div></div>
+            <div class="place__body">
+              <h3>Сон-Куль</h3>
+              <p>Высокогорное озеро и юрточные лагеря на джайлоо.</p>
+              <a href="#request" data-place="Сон-Куль">Хочу сюда →</a>
+            </div>
+          </article>
+          <article class="place">
+            <div class="place__media"><div class="place__ph"><span>Фото скоро</span></div></div>
+            <div class="place__body">
+              <h3>Ала-Арча</h3>
+              <p>Национальный парк рядом с Бишкеком.</p>
+              <a href="#request" data-place="Ала-Арча">Хочу сюда →</a>
+            </div>
+          </article>
+          <article class="place">
+            <div class="place__media"><div class="place__ph"><span>Фото скоро</span></div></div>
+            <div class="place__body">
+              <h3>Каракол и Джети-Огуз</h3>
+              <p>Красные скалы, ущелья и горячие источники.</p>
+              <a href="#request" data-place="Каракол и Джети-Огуз">Хочу сюда →</a>
+            </div>
+          </article>
+          <article class="place">
+            <div class="place__media"><div class="place__ph"><span>Фото скоро</span></div></div>
+            <div class="place__body">
+              <h3>Сары-Челек</h3>
+              <p>Заповедное озеро среди ореховых лесов.</p>
+              <a href="#request" data-place="Сары-Челек">Хочу сюда →</a>
+            </div>
+          </article>
+          <article class="place">
+            <div class="place__media"><div class="place__ph"><span>Фото скоро</span></div></div>
+            <div class="place__body">
+              <h3>Арсланбоб</h3>
+              <p>Реликтовые ореховые леса и водопады.</p>
+              <a href="#request" data-place="Арсланбоб">Хочу сюда →</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ЧТО ВХОДИТ ============ -->
+    <section class="section section--tint" id="included">
+      <div class="container">
+        <p class="eyebrow eyebrow--dark">Что входит</p>
+        <ul class="included">
+          <li><b>01</b><h3>Маршрут</h3><p>Собираем под ваши даты и состав группы.</p></li>
+          <li><b>02</b><h3>Транспорт</h3><p>Дорога туда, по маршруту и обратно.</p></li>
+          <li><b>03</b><h3>Проживание</h3><p>Гостевые дома, отели или юрты.</p></li>
+          <li><b>04</b><h3>Сопровождение</h3><p>На связи с вами всю поездку.</p></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ ЗАЯВКА ============ -->
+    <section class="section" id="request">
+      <div class="container request">
+        <div class="request__info">
+          <p class="eyebrow eyebrow--dark">Заявка</p>
+          <h2>Подберём тур под вас</h2>
+          <ul class="contacts">
+            <li><span>Телефон</span><a href="tel:+996770117111">+996 770 117 111</a></li>
+            <li><span>E-mail</span><a href="mailto:ulutbaatyry@gmail.com">ulutbaatyry@gmail.com</a></li>
+            <li><span>Telegram</span><a href="https://t.me/Ulut_Baatyry_bot" target="_blank" rel="noopener">@Ulut_Baatyry_bot</a></li>
+          </ul>
+        </div>
+        <!-- data-api: адрес приёма заявок (бэкенд ulut-baatyry-agent). На сервере заменить на https://<домен>/api/leads -->
+        <form class="form" id="form" data-api="http://127.0.0.1:8000/api/leads">
+          <label>Ваше имя<input type="text" name="name" placeholder="Как к вам обращаться" required maxlength="100"></label>
+          <label>Телефон<input type="tel" name="phone" placeholder="+996" required maxlength="30"></label>
+          <!-- Ловушка для спам-ботов: людям не видно -->
+          <label class="form__hp" aria-hidden="true">Сайт<input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+          <input type="hidden" name="direction" value="tour">
+          <label>Куда хотите поехать
+            <select id="place">
+              <option value="">Пока не решили</option>
+              <option>Иссык-Куль</option>
+              <option>Сон-Куль</option>
+              <option>Ала-Арча</option>
+              <option>Каракол и Джети-Огуз</option>
+              <option>Сары-Челек</option>
+              <option>Арсланбоб</option>
+            </select>
+          </label>
+          <label>Даты и сколько человек<textarea id="details" rows="3" maxlength="1500" placeholder="Например: в июле на 5 дней, двое взрослых и ребёнок"></textarea></label>
+          <button class="btn btn--primary btn--full" type="submit">Отправить заявку</button>
+          <p class="form__msg form__msg--ok" id="formOk" hidden>Спасибо! Заявка принята, мы свяжемся с вами в течение рабочего дня.</p>
+          <p class="form__msg form__msg--err" id="formErr" hidden></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <img src="../assets/partners/yntymak-tour/yntymak-tour-logo-horizontal-white.svg" alt="Ынтымак Тур" width="371" height="80">
+      <p>Ынтымак Тур — туристическое направление <a href="../index.html">«Улут-Баатыры»</a></p>
+      <p class="footer__copy">© <span id="year"></span> Ынтымак Тур</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
