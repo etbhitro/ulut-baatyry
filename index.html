@@ -95,10 +95,19 @@
         <a href="#directions" data-i18n="nav.directions">Направления</a>
         <a href="#contact" data-i18n="nav.contact">Контакты</a>
       </nav>
-      <div class="lang" role="group" aria-label="Язык · Тил · Language">
-        <button type="button" data-lang="ru" aria-pressed="true" title="Русский">RU</button>
-        <button type="button" data-lang="kg" aria-pressed="false" title="Кыргызча">KG</button>
-        <button type="button" data-lang="en" aria-pressed="false" title="English">EN</button>
+      <div class="lang">
+        <button class="lang__btn" type="button" aria-haspopup="true" aria-expanded="false" aria-label="Язык · Тил · Language · 语言 · Dil">
+          <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.6 4 5.6 4 9s-1.400 6.400-4 9c-2.600-2.600-4-5.600-4-9s1.400-6.400 4-9z"/></g></svg>
+          <span data-lang-current>RU</span>
+          <svg class="lang__chev" viewBox="0 0 24 24" width="12" height="12" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="lang__menu" hidden>
+          <button type="button" data-lang="ru" lang="ru" aria-pressed="true">Русский</button>
+          <button type="button" data-lang="kg" lang="ky" aria-pressed="false">Кыргызча</button>
+          <button type="button" data-lang="en" lang="en" aria-pressed="false">English</button>
+          <button type="button" data-lang="zh" lang="zh-Hans" aria-pressed="false">中文</button>
+          <button type="button" data-lang="tr" lang="tr" aria-pressed="false">Türkçe</button>
+        </div>
       </div>
       <a href="#contact" class="btn btn--primary btn--sm header__cta" data-i18n="header.cta">Связаться</a>
       <button class="burger" id="burger" aria-label="Меню" aria-expanded="false"><span></span><span></span></button>

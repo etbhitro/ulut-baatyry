@@ -1,5 +1,5 @@
-// Улут-Баатыры — языки сайта: русский (в самой разметке), кыргызский и английский.
-// Как добавить текст: поставить элементу data-i18n="ключ" и дописать перевод ключа в kg и en ниже.
+// Улут-Баатыры — языки сайта: русский (в самой разметке), кыргызский, английский, китайский и турецкий.
+// Как добавить текст: поставить элементу data-i18n="ключ" и дописать перевод ключа в kg, en, zh и tr ниже.
 // Русский текст берётся прямо из index.html, здесь лежат только строки, которых в разметке нет.
 (() => {
   const I18N = {
@@ -178,10 +178,179 @@
       'js.chat_fail': 'The message could not be sent.',
       'js.chat_offline': 'No connection. Check your internet or message us on Telegram.',
     },
+
+    zh: {
+      'meta.title': 'Ulut-Baatyry — 从传承走向伟大的未来',
+      'meta.description': 'Ulut-Baatyry（“民族英雄”）：从传承走向伟大的未来。守护吉尔吉斯斯坦的土地与传统、面向未来的项目和服务。',
+      'intro.sub': '民族英雄',
+      'intro.hint': '点击骑士进入',
+      'nav.directions': '业务方向',
+      'nav.contact': '联系方式',
+      'header.cta': '联系我们',
+      'hero.eyebrow': '民族英雄 · 吉尔吉斯斯坦',
+      'hero.title': 'Ulut-Baatyry.',
+      'hero.slogan': '从传承走向伟大的未来',
+      'hero.lead': '我们守护土地、历史与传统，并在此基础上建设能够留给后代的项目。',
+      'hero.btn2': '联系我们',
+      'd1.h': '旅游、休闲与体育',
+      'd1.p': '旅游综合体、农业旅游和一站式旅行服务：从机票到全程安排。',
+      'd2.h': '青年与教育',
+      'd2.p': '由导师带领的营地活动：体能训练、历史与文化、纪律、领导力。',
+      'd4.h': '投资项目',
+      'd4.p': '不同面积地块上的旅游区和工业区。',
+      'soon.num': '即将推出',
+      'soon.h': '新服务',
+      'soon.p': '我们正在筹备更多业务方向，届时将在此介绍。',
+      'dir.cta': '咨询业务方向',
+      'contact.h2': '让我们<br>携手共建',
+      'contact.lead': '请留下您的申请，我们将在一个工作日内与您联系。',
+      'contact.phone': '电话',
+      'contact.address': '地址',
+      'contact.later': '稍后补充',
+      'form.name': '您的姓名',
+      'form.name_ph': '我们该如何称呼您',
+      'form.phone': '电话',
+      'form.direction': '业务方向',
+      'opt.tour': '旅游、休闲与体育',
+      'opt.patriot': '青年项目',
+      'opt.invest': '投资项目',
+      'opt.other': '其他',
+      'form.message': '留言',
+      'form.message_ph': '请告诉我们能为您做些什么',
+      'form.submit': '提交申请',
+      'form.ok': '谢谢！我们已收到您的申请，将在一个工作日内与您联系。',
+      'form.alt': '或通过 <a href="https://t.me/Ulut_Baatyry_bot" target="_blank" rel="noopener">Telegram</a> 给我们留言，我们会立即回复。',
+      'strip.label': '合作伙伴',
+      'footer.slogan': '从传承走向伟大的未来。',
+      'footer.site': '网站',
+      'footer.contact': '联系',
+      'footer.lead': '提交申请',
+      'footer.tgbot': 'Telegram 机器人',
+      'footer.rights': 'Ulut-Baatyry。版权所有。',
+      'footer.love': '怀着对吉尔吉斯斯坦的热爱而制作',
+      'chat.launch': '提问',
+      'chat.title': 'Ulut-Baatyry 助手',
+      'chat.sub': '数字助手 · 即时回复',
+      'chat.ph': '请输入消息…',
+      'chat.foot_q': '更习惯用即时通讯软件？',
+      'chat.foot_link': '在 Telegram 中继续',
+      'd4.more': '查看项目',
+      'inv.page_title': '投资项目 — Ulut-Baatyry',
+      'inv.back': '全部业务方向',
+      'inv.lead': '各项目资料可应要求提供。',
+      'inv.cover_alt': '日落时分的湖畔度假综合体',
+      'inv.tag': '旅游区 · 1 公顷',
+      'inv.title': '伊塞克湖畔度假综合体',
+      'inv.text': '概念方案已完成：总平面图、平面布局和立面图。资料可应要求提供。',
+      'inv.cta': '索取资料',
+      'inv2.cover_alt': '湖畔在建住宅楼',
+      'inv2.tag': '住宅开发 · 11 公顷',
+      'inv2.title': '伊塞克湖住宅综合体',
+      'inv2.text': '采用模块化砌块技术建造的五层住宅楼，配有景观庭院、绿地和停车场。状态：筹备实施中。',
+      'inv3.cover_alt': '湖畔的采石场和生产场地',
+      'inv3.tag': '工业区 · 30 公顷',
+      'inv3.title': '伊塞克湖砖厂建设用地',
+      'inv3.status': '仅土地',
+      'inv3.text': '带采石场的地块，附近有电力和水源。原料的质量和储量有待确认。',
+      'inv4.cover_alt': '群山映衬下的太阳能电池板阵列',
+      'inv4.tag': '能源 · 100 公顷',
+      'inv4.title': '伊塞克湖太阳能电站',
+      'inv4.text': '工业级规模的太阳能发电：100 公顷土地，为地区提供清洁能源。',
+      'js.form_check': '请检查姓名和电话。',
+      'js.form_fail': '申请未能发送。请检查网络连接，或通过 Telegram 联系我们。',
+      'js.chat_greeting': '您好！我是 Ulut-Baatyry 的数字助手。欢迎咨询我们的业务方向或合作事宜，我会为您解答并转交给专员。',
+      'js.chat_fail': '消息未能发送。',
+      'js.chat_offline': '无法连接。请检查网络，或通过 Telegram 联系我们。',
+    },
+
+    tr: {
+      'meta.title': 'Ulut-Baatyry — mirastan büyük geleceğe',
+      'meta.description': 'Ulut-Baatyry (“Ulusun Kahramanları”): mirastan büyük geleceğe. Kırgızistan’ın toprağını ve geleneklerini koruyan, geleceği için çalışan projeler ve hizmetler.',
+      'intro.sub': 'Ulusun Kahramanları',
+      'intro.hint': 'Atlıya dokunun',
+      'nav.directions': 'Faaliyet alanları',
+      'nav.contact': 'İletişim',
+      'header.cta': 'İletişime geçin',
+      'hero.eyebrow': 'Ulusun Kahramanları · Kırgızistan',
+      'hero.title': 'Ulut-Baatyry.',
+      'hero.slogan': 'Mirastan büyük geleceğe',
+      'hero.lead': 'Toprağımızı, tarihimizi ve geleneklerimizi koruyor, bunların üzerine gelecek nesillere kalacak projeler inşa ediyoruz.',
+      'hero.btn2': 'Bize ulaşın',
+      'd1.h': 'Turizm, dinlenme ve spor',
+      'd1.p': 'Turizm kompleksi, agroturizm ve anahtar teslim seyahatler: biletlerden yolculuğun tüm organizasyonuna kadar.',
+      'd2.h': 'Gençlik ve eğitim',
+      'd2.p': 'Rehberler eşliğinde kamp dönemleri: fiziksel hazırlık, tarih ve kültür, disiplin, liderlik.',
+      'd4.h': 'Yatırım projeleri',
+      'd4.p': 'Farklı büyüklükteki arazilerde turizm ve sanayi bölgeleri.',
+      'soon.num': 'Yakında',
+      'soon.h': 'Yeni hizmetler',
+      'soon.p': 'Birkaç yeni alanı daha hayata geçirmeye hazırlanıyoruz. Onları burada anlatacağız.',
+      'dir.cta': 'Alan hakkında soru sorun',
+      'contact.h2': 'Gelin, birlikte<br>inşa edelim',
+      'contact.lead': 'Başvurunuzu bırakın, bir iş günü içinde sizinle iletişime geçelim.',
+      'contact.phone': 'Telefon',
+      'contact.address': 'Adres',
+      'contact.later': 'yakında eklenecek',
+      'form.name': 'Adınız',
+      'form.name_ph': 'Size nasıl hitap edelim',
+      'form.phone': 'Telefon',
+      'form.direction': 'Alan',
+      'opt.tour': 'Turizm, dinlenme ve spor',
+      'opt.patriot': 'Gençlik programları',
+      'opt.invest': 'Yatırım projeleri',
+      'opt.other': 'Diğer',
+      'form.message': 'Mesaj',
+      'form.message_ph': 'Size nasıl yardımcı olabileceğimizi yazın',
+      'form.submit': 'Başvuruyu gönder',
+      'form.ok': 'Teşekkürler! Başvurunuz alındı, bir iş günü içinde sizinle iletişime geçeceğiz.',
+      'form.alt': 'Ya da bize <a href="https://t.me/Ulut_Baatyry_bot" target="_blank" rel="noopener">Telegram</a> üzerinden yazın&nbsp;— hemen yanıtlarız.',
+      'strip.label': 'Ortaklar',
+      'footer.slogan': 'Mirastan büyük geleceğe.',
+      'footer.site': 'Site',
+      'footer.contact': 'İletişim',
+      'footer.lead': 'Başvuru bırakın',
+      'footer.tgbot': 'Telegram botu',
+      'footer.rights': 'Ulut-Baatyry. Tüm hakları saklıdır.',
+      'footer.love': 'Kırgızistan sevgisiyle yapıldı',
+      'chat.launch': 'Soru sorun',
+      'chat.title': 'Ulut-Baatyry asistanı',
+      'chat.sub': 'Dijital asistan · hemen yanıtlar',
+      'chat.ph': 'Mesajınızı yazın…',
+      'chat.foot_q': 'Mesajlaşma uygulaması daha mı rahat?',
+      'chat.foot_link': 'Telegram’da devam edin',
+      'd4.more': 'Projeleri görün',
+      'inv.page_title': 'Yatırım projeleri — Ulut-Baatyry',
+      'inv.back': 'Tüm alanlar',
+      'inv.lead': 'Her projeye ait materyalleri talep üzerine gönderiyoruz.',
+      'inv.cover_alt': 'Gün batımında göl kıyısında tatil kompleksi',
+      'inv.tag': 'Turizm bölgesi · 1 ha',
+      'inv.title': 'Issık Göl kıyısında tatil kompleksi',
+      'inv.text': 'Konsept hazır: vaziyet planı, kat planları ve cepheler. Materyalleri talep üzerine göndeririz.',
+      'inv.cta': 'Materyal isteyin',
+      'inv2.cover_alt': 'Göl kıyısında yapım aşamasındaki konut binası',
+      'inv2.tag': 'Konut projesi · 11 ha',
+      'inv2.title': 'Issık Göl’de konut kompleksi',
+      'inv2.text': 'Modüler blok teknolojisiyle beş katlı binalar, düzenlenmiş avlular, yeşil alanlar ve otoparklar. Durum: uygulamaya hazırlık.',
+      'inv3.cover_alt': 'Göl kıyısında taş ocağı ve üretim sahası',
+      'inv3.tag': 'Sanayi bölgesi · 30 ha',
+      'inv3.title': 'Issık Göl’de tuğla fabrikası için arazi',
+      'inv3.status': 'Yalnızca arazi',
+      'inv3.text': 'Ocağı bulunan arazi; elektrik ve su yakında. Ham maddenin kalitesi ve rezervleri doğrulanacaktır.',
+      'inv4.cover_alt': 'Dağların önünde güneş paneli tarlası',
+      'inv4.tag': 'Enerji · 100 ha',
+      'inv4.title': 'Issık Göl’de güneş enerjisi santrali',
+      'inv4.text': 'Endüstriyel ölçekte güneş enerjisi üretimi: bölge için temiz enerjiye 100 hektar.',
+      'js.form_check': 'Lütfen adınızı ve telefonunuzu kontrol edin.',
+      'js.form_fail': 'Başvuru gönderilemedi. İnternet bağlantınızı kontrol edin ya da bize Telegram’dan yazın.',
+      'js.chat_greeting': 'Merhaba! Ben Ulut-Baatyry’nin dijital asistanıyım. Faaliyet alanlarımız veya iş birliği hakkında sorun — yardımcı olur, sizi uzmana yönlendiririm.',
+      'js.chat_fail': 'Mesaj gönderilemedi.',
+      'js.chat_offline': 'Bağlantı yok. İnternetinizi kontrol edin ya da bize Telegram’dan yazın.',
+    },
   };
 
-  const LANGS = ['ru', 'kg', 'en'];
-  const HTML_LANG = { ru: 'ru', kg: 'ky', en: 'en' };
+  const LANGS = ['ru', 'kg', 'en', 'zh', 'tr'];
+  const HTML_LANG = { ru: 'ru', kg: 'ky', en: 'en', zh: 'zh-Hans', tr: 'tr' };
+  const SHORT = { ru: 'RU', kg: 'KG', en: 'EN', zh: '中文', tr: 'TR' };
   const STORE_KEY = 'ubLang';
   const root = document.documentElement;
   const nodes = [...document.querySelectorAll('[data-i18n]')];
@@ -213,6 +382,7 @@
     document.title = t(TITLE_KEY);
     if (TITLE_KEY === 'meta.title') metaDesc.content = t('meta.description');
     document.querySelectorAll('[data-lang]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.lang === current)));
+    document.querySelectorAll('[data-lang-current]').forEach(el => { el.textContent = SHORT[current]; });
   };
 
   // Choice order: ?lang= in the address, then the visitor's earlier choice, then Russian.
@@ -222,10 +392,29 @@
   }
   if (initial && initial !== 'ru') apply(initial);
 
+  // Окошко выбора языка: кнопка с текущим языком и выпадающий список
+  const picker = document.querySelector('.lang');
+  const pickerBtn = picker && picker.querySelector('.lang__btn');
+  const pickerMenu = picker && picker.querySelector('.lang__menu');
+  const closeMenu = () => {
+    if (!pickerMenu || pickerMenu.hidden) return;
+    pickerMenu.hidden = true;
+    pickerBtn.setAttribute('aria-expanded', 'false');
+  };
+  if (pickerBtn) {
+    pickerBtn.addEventListener('click', () => {
+      pickerMenu.hidden = !pickerMenu.hidden;
+      pickerBtn.setAttribute('aria-expanded', String(!pickerMenu.hidden));
+    });
+    document.addEventListener('click', e => { if (!picker.contains(e.target)) closeMenu(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeMenu(); } });
+  }
+
   document.querySelectorAll('[data-lang]').forEach(btn => btn.addEventListener('click', () => {
     apply(btn.dataset.lang);
     try { localStorage.setItem(STORE_KEY, current); } catch (e) {}
     document.dispatchEvent(new CustomEvent('ub:lang', { detail: current }));
+    closeMenu();
   }));
 
   window.ubT = t;
