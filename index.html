@@ -74,6 +74,16 @@
     <p class="intro__hint" data-i18n="intro.hint">Нажмите на всадника</p>
   </div>
 
+  <!-- Фон всей страницы: одно фото озера на месте. На первом экране оно в полную силу, при прокрутке бледнеет (script.js) -->
+  <div class="backdrop" aria-hidden="true">
+    <img src="assets/hero-issyk-kul-2560.jpg"
+         srcset="assets/hero-issyk-kul-1400.jpg 1400w, assets/hero-issyk-kul-2560.jpg 2560w"
+         sizes="max(100vw, 229vh)" width="2560" height="1118" alt="" fetchpriority="high" decoding="async">
+    <img class="backdrop__soft" src="assets/hero-issyk-kul-1400.jpg" alt="" loading="lazy" decoding="async">
+    <div class="falcon falcon--1"><svg viewBox="0 0 120 80"><use href="#falcon"/></svg></div>
+    <div class="falcon falcon--2"><svg viewBox="0 0 120 80"><use href="#falcon"/></svg></div>
+  </div>
+
   <!-- ============ HEADER ============ -->
   <header class="header" id="header">
     <div class="container header__inner">
@@ -82,7 +92,6 @@
         <span class="logo__text">Улут-<br>Баатыры</span>
       </a>
       <nav class="nav" id="nav">
-        <a href="#about" data-i18n="nav.about">О нас</a>
         <a href="#directions" data-i18n="nav.directions">Направления</a>
         <a href="#contact" data-i18n="nav.contact">Контакты</a>
       </nav>
@@ -99,16 +108,8 @@
   <main id="top">
     <!-- ============ HERO ============ -->
     <section class="hero">
-      <!-- Иссык-Куль: фото на весь первый экран -->
-      <div class="hero__sky">
-        <img class="hero__photo" data-speed="0.14"
-             src="assets/hero-issyk-kul-2560.jpg"
-             srcset="assets/hero-issyk-kul-1400.jpg 1400w, assets/hero-issyk-kul-2560.jpg 2560w"
-             sizes="max(100vw, 229vh)" width="2560" height="1118"
-             alt="" fetchpriority="high" decoding="async">
-        <div class="falcon falcon--1" aria-hidden="true"><svg viewBox="0 0 120 80"><use href="#falcon"/></svg></div>
-        <div class="falcon falcon--2" aria-hidden="true"><svg viewBox="0 0 120 80"><use href="#falcon"/></svg></div>
-      </div>
+      <!-- Фото озера — общий фон страницы (.backdrop); здесь только светлая вуаль под текст -->
+      <div class="hero__sky"></div>
 
       <div class="container hero__content">
         <p class="eyebrow reveal"><span class="dot"></span> <span data-i18n="hero.eyebrow">Герои нации · Кыргызстан</span></p>
@@ -118,42 +119,14 @@
         </h1>
         <p class="hero__lead reveal" data-i18n="hero.lead">Бережём землю, историю и традиции&nbsp;— и строим на них проекты, которые останутся следующим поколениям.</p>
         <div class="hero__actions reveal">
-          <a href="#directions" class="btn btn--primary"><span data-i18n="hero.btn1">Чем мы занимаемся</span>
+          <a href="#directions" class="btn btn--primary"><span data-i18n="nav.directions">Направления</span>
             <svg viewBox="0 0 24 24" width="18" height="18"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
           <a href="#contact" class="btn btn--ghost" data-i18n="hero.btn2">Связаться с нами</a>
         </div>
       </div>
 
-      <a href="#about" class="scroll-hint" aria-label="Листать вниз"><span></span></a>
-    </section>
-
-    <!-- ============ О НАС ============ -->
-    <section class="section about" id="about">
-      <div class="container">
-        <div class="section__head reveal">
-          <p class="eyebrow"><span class="dot"></span> <span data-i18n="nav.about">О нас</span></p>
-          <h2 class="h2" data-i18n="about.h2">Наследие&nbsp;— это не прошлое. Это опора.</h2>
-          <p class="section__lead" data-i18n="about.lead">«Улут-Баатыры» значит «Герои нации». Мы объединяем проекты, у которых общая цель: сохранить то, что нам досталось, и передать дальше больше, чем получили.</p>
-        </div>
-        <div class="pillars">
-          <article class="pillar reveal">
-            <span class="pillar__step" data-i18n="p1.step">Наследие</span>
-            <h3 data-i18n="p1.h">На чём стоим</h3>
-            <p data-i18n="p1.p">Земля, история и традиции народа. С них начинается каждый наш проект.</p>
-          </article>
-          <article class="pillar reveal">
-            <span class="pillar__step" data-i18n="p2.step">Дело</span>
-            <h3 data-i18n="p2.h">Что делаем</h3>
-            <p data-i18n="p2.p">Запускаем и развиваем проекты и сервисы, которые приносят пользу людям и стране.</p>
-          </article>
-          <article class="pillar reveal">
-            <span class="pillar__step" data-i18n="p3.step">Будущее</span>
-            <h3 data-i18n="p3.h">Ради чего</h3>
-            <p data-i18n="p3.p">Чтобы выросло поколение, которое гордится своей землёй и умеет на ней строить.</p>
-          </article>
-        </div>
-      </div>
+      <a href="#directions" class="scroll-hint" aria-label="Листать вниз"><span></span></a>
     </section>
 
     <!-- ============ НАПРАВЛЕНИЯ ============ -->
@@ -167,15 +140,14 @@
       <div class="container">
         <div class="section__head reveal">
           <p class="eyebrow"><span class="dot"></span> <span data-i18n="nav.directions">Направления</span></p>
-          <h2 class="h2" data-i18n="dir.h2">Чем мы занимаемся</h2>
-          <p class="section__lead" data-i18n="dir.lead">У каждого направления свои задачи и своя команда. Список растёт: новые сервисы появятся здесь.</p>
         </div>
         <div class="cards cards--3">
-          <article class="card reveal">
+          <a class="card card--link reveal" href="invest.html">
             <span class="card__num">01</span>
-            <h3 data-i18n="d1.h">Туризм и отдых</h3>
-            <p data-i18n="d1.p">Туристический комплекс, агротуризм и путешествия под ключ: от билетов до организации поездки.</p>
-          </article>
+            <h3 data-i18n="d4.h">Инвестиционные проекты</h3>
+            <p data-i18n="d4.p">Туристические и промышленные зоны на участках разной площади.</p>
+            <span class="card__more"><span data-i18n="d4.more">Смотреть проекты</span> →</span>
+          </a>
           <article class="card reveal">
             <span class="card__num">02</span>
             <h3 data-i18n="d2.h">Молодёжь и воспитание</h3>
@@ -183,8 +155,8 @@
           </article>
           <article class="card reveal">
             <span class="card__num">03</span>
-            <h3 data-i18n="d4.h">Инвестиционные проекты</h3>
-            <p data-i18n="d4.p">Земельные участки и готовые рабочие проекты, открытые для участия.</p>
+            <h3 data-i18n="d1.h">Туризм и отдых</h3>
+            <p data-i18n="d1.p">Туристический комплекс, агротуризм и путешествия под ключ: от билетов до организации поездки.</p>
           </article>
           <article class="card card--soon reveal">
             <span class="card__num" data-i18n="soon.num">Скоро</span>
@@ -222,9 +194,9 @@
           <label class="form__hp" aria-hidden="true">Сайт<input type="text" name="website" tabindex="-1" autocomplete="off"></label>
           <label><span data-i18n="form.direction">Направление</span>
             <select name="direction" id="direction">
+              <option value="invest" data-i18n="opt.invest">Инвестиционные проекты</option>
               <option value="tour" data-i18n="opt.tour">Туризм и отдых</option>
               <option value="patriot" data-i18n="opt.patriot">Молодёжные программы</option>
-              <option value="invest" data-i18n="opt.invest">Инвестиционные проекты</option>
               <option value="other" data-i18n="opt.other">Другое</option>
             </select>
           </label>
@@ -272,7 +244,7 @@
         <p class="footer__motto" lang="ky"><svg><use href="#star"/></svg> Ата-Журт үчүн!</p>
       </div>
       <div class="footer__cols">
-        <div><h5 data-i18n="footer.site">Сайт</h5><a href="#about" data-i18n="nav.about">О нас</a><a href="#directions" data-i18n="nav.directions">Направления</a><a href="#contact" data-i18n="nav.contact">Контакты</a></div>
+        <div><h5 data-i18n="footer.site">Сайт</h5><a href="#directions" data-i18n="nav.directions">Направления</a><a href="#contact" data-i18n="nav.contact">Контакты</a></div>
         <div><h5 data-i18n="footer.contact">Связь</h5><a href="#contact" data-i18n="footer.lead">Оставить заявку</a><a href="https://t.me/Ulut_Baatyry_bot" target="_blank" rel="noopener" data-i18n="footer.tgbot">Telegram-бот</a><a href="#">+996 (000) 00-00-00</a><a href="#">info@example.kg</a></div>
       </div>
     </div>

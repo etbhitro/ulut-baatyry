@@ -16,7 +16,6 @@
       'meta.description': '«Улут-Баатыры»: мурастан — улуу келечекке. Жерибизди жана салтыбызды сактаган, Кыргызстандын келечеги үчүн иштеген долбоорлор жана кызматтар.',
       'intro.sub': 'Мурастан — улуу келечекке',
       'intro.hint': 'Чабандести басыңыз',
-      'nav.about': 'Биз жөнүндө',
       'nav.directions': 'Багыттар',
       'nav.contact': 'Байланыш',
       'header.cta': 'Байланышуу',
@@ -24,27 +23,13 @@
       'hero.title': 'Улут-Баатыры.',
       'hero.slogan': 'Мурастан&nbsp;— улуу келечекке',
       'hero.lead': 'Жерибизди, тарыхыбызды жана салтыбызды сактайбыз&nbsp;— жана алардын негизинде кийинки муундарга кала турган долбоорлорду курабыз.',
-      'hero.btn1': 'Биз эмне кылабыз',
       'hero.btn2': 'Биз менен байланышуу',
-      'about.h2': 'Мурас&nbsp;— өткөн чак эмес. Бул таяныч.',
-      'about.lead': 'Биз максаты бир долбоорлорду бириктиребиз: бизге калганды сактап, кийинкилерге алганыбыздан көбүрөөк өткөрүп берүү.',
-      'p1.step': 'Мурас',
-      'p1.h': 'Эмнеге таянабыз',
-      'p1.p': 'Жер, тарых жана элдин салты. Ар бир долбоорубуз ушундан башталат.',
-      'p2.step': 'Иш',
-      'p2.h': 'Эмне кылабыз',
-      'p2.p': 'Адамдарга жана өлкөгө пайда алып келген долбоорлорду жана кызматтарды ишке киргизип, өнүктүрөбүз.',
-      'p3.step': 'Келечек',
-      'p3.h': 'Эмне үчүн',
-      'p3.p': 'Өз жери менен сыймыктанган жана анда кура билген муун өссүн деп.',
-      'dir.h2': 'Биз эмне кылабыз',
-      'dir.lead': 'Ар бир багыттын өз милдети жана өз командасы бар. Тизме өсүп жатат: жаңы кызматтар ушул жерде пайда болот.',
       'd1.h': 'Туризм жана эс алуу',
       'd1.p': 'Туристтик комплекс, агротуризм жана даяр саякаттар: билеттен тартып сапарды уюштурууга чейин.',
       'd2.h': 'Жаштар жана тарбия',
       'd2.p': 'Насаатчылар менен лагердик сменалар: дене тарбия, тарых жана маданият, тартип, лидерлик.',
       'd4.h': 'Инвестициялык долбоорлор',
-      'd4.p': 'Жер тилкелери жана катышууга ачык даяр жумушчу долбоорлор.',
+      'd4.p': 'Ар кандай аянттагы жер тилкелериндеги туристтик жана өнөр жай зоналары.',
       'soon.num': 'Жакында',
       'soon.h': 'Жаңы кызматтар',
       'soon.p': 'Дагы бир нече багытты ишке киргизүүгө даярдап жатабыз. Алар тууралуу ушул жерден айтып беребиз.',
@@ -81,6 +66,16 @@
       'chat.ph': 'Билдирүү жазыңыз…',
       'chat.foot_q': 'Мессенджерде ыңгайлуубу?',
       'chat.foot_link': 'Telegramда улантуу',
+      'd4.more': 'Долбоорлорду көрүү',
+      'inv.page_title': 'Инвестициялык долбоорлор — Улут-Баатыры',
+      'inv.back': 'Бардык багыттар',
+      'inv.eyebrow': 'Багыт',
+      'inv.lead': 'Ар бир долбоор боюнча материалдарды сурам боюнча жөнөтөбүз.',
+      'inv.cover_alt': 'Күн батып бараткандагы көл жээгиндеги курорттук комплекс',
+      'inv.tag': 'Туристтик зона · 1 га',
+      'inv.title': 'Ысык-Көлдүн жээгиндеги курорттук комплекс',
+      'inv.text': 'Концепция даяр: башкы план, пландоолор жана фасаддар. Материалдарды сурам боюнча жөнөтөбүз.',
+      'inv.cta': 'Материалдарды суроо',
       'js.form_check': 'Атыңызды жана телефонуңузду текшериңиз.',
       'js.form_fail': 'Билдирме жөнөтүлгөн жок. Интернетти текшериңиз же бизге Telegram аркылуу жазыңыз.',
       'js.chat_greeting': 'Саламатсызбы! Мен «Улут-Баатыры» санарип жардамчысымын. Багыттарыбыз же кызматташуу тууралуу сураңыз — айтып берем жана адиске өткөрөм.',
@@ -93,7 +88,6 @@
       'meta.description': 'Ulut-Baatyry (“Heroes of the Nation”): from heritage to a great future. Projects and services that care for the land and traditions of Kyrgyzstan and work for its future.',
       'intro.sub': 'Heroes of the Nation',
       'intro.hint': 'Tap the horseman',
-      'nav.about': 'About',
       'nav.directions': 'What we do',
       'nav.contact': 'Contact',
       'header.cta': 'Get in touch',
@@ -101,27 +95,13 @@
       'hero.title': 'Ulut-Baatyry.',
       'hero.slogan': 'From heritage to&nbsp;a&nbsp;great future',
       'hero.lead': 'We care for our land, history and traditions&nbsp;— and build on them projects that will remain for the generations to come.',
-      'hero.btn1': 'What we do',
       'hero.btn2': 'Contact us',
-      'about.h2': 'Heritage is not the past. It is a foundation.',
-      'about.lead': 'Ulut-Baatyry means “Heroes of the Nation”. We bring together projects with one shared goal: to keep what was handed down to us and pass on more than we received.',
-      'p1.step': 'Heritage',
-      'p1.h': 'Where we stand',
-      'p1.p': 'The land, the history and the traditions of our people. Every project of ours starts there.',
-      'p2.step': 'Work',
-      'p2.h': 'What we do',
-      'p2.p': 'We launch and grow projects and services that are useful to people and to the country.',
-      'p3.step': 'Future',
-      'p3.h': 'What it is for',
-      'p3.p': 'So that a generation grows up proud of its land and able to build on it.',
-      'dir.h2': 'What we do',
-      'dir.lead': 'Each area has its own tasks and its own team. The list is growing: new services will appear here.',
       'd1.h': 'Tourism and leisure',
       'd1.p': 'A tourist complex, agritourism and fully arranged trips: from tickets to the whole journey.',
       'd2.h': 'Youth and upbringing',
       'd2.p': 'Camp sessions with mentors: physical training, history and culture, discipline, leadership.',
       'd4.h': 'Investment projects',
-      'd4.p': 'Land plots and ready-to-build projects open for participation.',
+      'd4.p': 'Tourist and industrial zones on plots of different sizes.',
       'soon.num': 'Soon',
       'soon.h': 'New services',
       'soon.p': 'We are preparing several more areas for launch. We will tell you about them here.',
@@ -158,6 +138,16 @@
       'chat.ph': 'Type a message…',
       'chat.foot_q': 'Prefer a messenger?',
       'chat.foot_link': 'Continue in Telegram',
+      'd4.more': 'View projects',
+      'inv.page_title': 'Investment projects — Ulut-Baatyry',
+      'inv.back': 'All areas',
+      'inv.eyebrow': 'Area',
+      'inv.lead': 'Materials on each project are sent on request.',
+      'inv.cover_alt': 'Lakeside resort complex at sunset',
+      'inv.tag': 'Tourist zone · 1 ha',
+      'inv.title': 'Resort complex on the shore of Issyk-Kul',
+      'inv.text': 'The concept is ready: master plan, layouts and elevations. Materials are sent on request.',
+      'inv.cta': 'Request materials',
       'js.form_check': 'Please check your name and phone number.',
       'js.form_fail': 'The request could not be sent. Check your connection or message us on Telegram.',
       'js.chat_greeting': 'Hello! I am the Ulut-Baatyry digital assistant. Ask about what we do or about working together — I will help and pass you on to a specialist.',
@@ -180,7 +170,9 @@
     const [attr, key] = pair.split(':');
     if (!(key in I18N.ru)) I18N.ru[key] = el.getAttribute(attr);
   }));
-  I18N.ru['meta.title'] = document.title;
+  // A page may name its own title key: <html data-title-key="...">
+  const TITLE_KEY = root.dataset.titleKey || 'meta.title';
+  I18N.ru[TITLE_KEY] = document.title;
   I18N.ru['meta.description'] = metaDesc.content;
 
   let current = 'ru';
@@ -194,8 +186,8 @@
       const [attr, key] = pair.split(':');
       el.setAttribute(attr, t(key));
     }));
-    document.title = t('meta.title');
-    metaDesc.content = t('meta.description');
+    document.title = t(TITLE_KEY);
+    if (TITLE_KEY === 'meta.title') metaDesc.content = t('meta.description');
     document.querySelectorAll('[data-lang]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.lang === current)));
   };
 

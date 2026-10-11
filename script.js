@@ -64,19 +64,22 @@
   };
   if (introActive) afterIntro.push(startReveals); else startReveals();
 
-  // Параллакс фото в первом экране
-  const layers = document.querySelectorAll('.hero__photo');
-  if (!reduceMotion && layers.length) {
+  // Фон: на первом экране фото резкое, при прокрутке мягко размывается и слегка светлеет
+  const backdrop = document.querySelector('.backdrop');
+  if (backdrop) {
     let ticking = false;
+    const fade = () => {
+      // плавный разгон и торможение на протяжении чуть больше одного экрана
+      const t = Math.min(window.scrollY / (window.innerHeight * 1.15), 1);
+      backdrop.style.setProperty('--fade', (t * t * (3 - 2 * t)).toFixed(3));
+      ticking = false;
+    };
     window.addEventListener('scroll', () => {
       if (ticking) return;
       ticking = true;
-      requestAnimationFrame(() => {
-        const y = Math.min(window.scrollY, window.innerHeight);
-        layers.forEach(l => { l.style.transform = `translateY(${y * parseFloat(l.dataset.speed)}px)`; });
-        ticking = false;
-      });
+      requestAnimationFrame(fade);
     }, { passive: true });
+    fade();
   }
 
   // Активный пункт меню
