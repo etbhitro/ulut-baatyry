@@ -322,6 +322,10 @@ ul { margin: 0; padding: 0; list-style: none; }
 /* ---------- Страница направления: проекты и листы ---------- */
 .subpage .header { position: sticky; top: 0; }
 .page-head { padding-top: clamp(32px, 5vw, 56px); }
+.page-head__top { display: flex; align-items: flex-end; justify-content: space-between; gap: 28px 48px; flex-wrap: wrap; margin-bottom: clamp(36px, 5vw, 60px); }
+.page-head__top .section__head { margin-bottom: 0; }
+/* в файле логотипа поля по 20 px со всех сторон — убираем их отрицательным отступом */
+.page-head__brand { display: block; height: 96px; width: auto; max-width: none; margin: -24px 0 -6px -24px; }
 .back { display: inline-block; margin-bottom: 28px; font-weight: 600; font-size: .92rem; color: var(--sky-700); }
 .back:hover { color: var(--sky-600); }
 .project + .project { margin-top: 24px; }
@@ -334,6 +338,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 .project__tag { margin: 0 0 12px; font: 600 .76rem var(--font-head); letter-spacing: .14em; text-transform: uppercase; color: var(--gold); }
 .project h3 { font-size: clamp(1.25rem, 2vw, 1.6rem); margin-bottom: 8px; }
 .project p:last-child { margin: 0; color: var(--muted); }
+.project .project__status { display: inline-block; margin: 0 0 12px; padding: 5px 12px; border-radius: 8px; background: #fbf1dc; color: #7a5810; font-weight: 700; font-size: .92rem; }
 @media (max-width: 760px) { .project { grid-template-columns: 1fr; } .project__cover img { aspect-ratio: 16 / 9; } }
 
 .directions .section__head { margin-bottom: 24px; }
@@ -351,8 +356,9 @@ ul { margin: 0; padding: 0; list-style: none; }
 .lockup { display: inline-flex; align-items: center; height: 36px; color: #0E2D52; white-space: nowrap; transition: opacity .25s; }
 a.lockup[href]:hover { opacity: .7; }
 .lockup svg { flex: none; }
-/* «Ынтымак Тур» и Belek Invest: в файлах логотипов поля по 20 px со всех сторон, убираем их отрицательным отступом */
+/* «Ынтымак Тур» и Belek Nur Invest: в файлах логотипов поля по 20 px со всех сторон, убираем их отрицательным отступом */
 .lockup--yntymak img { height: 56px; width: auto; max-width: none; margin: -10px -14px; }
+.lockup--ndws img { height: 58px; width: auto; max-width: none; margin: -11px -9px; }
 .lockup--invest img { height: 64px; width: auto; max-width: none; margin: -14px -16px; }
 /* «Белек Авто»: тёмно-синий + сигнальный красный, Tektur Black, наклон -12° */
 .lockup--avto { gap: .233em; font: 900 25px/1 'Tektur', var(--font-head); text-transform: uppercase; color: #0E1B2C; transform: skewX(-12deg); }
@@ -362,9 +368,11 @@ a.lockup[href]:hover { opacity: .7; }
 .lockup--avto b:nth-child(1) { width: .9em; }
 .lockup--avto b:nth-child(2) { width: .633em; }
 .lockup--avto b:nth-child(3) { width: .367em; }
+/* на средних экранах четыре логотипа встают ровной сеткой 2×2 */
+@media (max-width: 1180px) { .strip__logos { display: grid; grid-template-columns: repeat(2, auto); justify-content: space-around; justify-items: center; } }
 @media (max-width: 760px) {
   .strip__inner { flex-direction: column; gap: 22px; padding: 26px 20px; }
-  .strip__logos { flex-direction: column; }
+  .strip__logos { grid-template-columns: 1fr; }
 }
 
 /* ---------- Contact ---------- */

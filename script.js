@@ -95,9 +95,10 @@
 
   // Адреса страниц сервисов — заполнить здесь. Пока адрес пуст, карточка ведёт на форму контактов.
   const SERVICES = {
-    invest: '',  // Belek Invest
+    invest: '',  // Belek Nur Invest
     tour: '',    // Ынтымак Тур
     auto: '',    // Белек Авто
+    ndws: '',    // NDWS
     realty: '',  // Недвижимость и земли
   };
   document.querySelectorAll('.service[data-service]').forEach(card => {
