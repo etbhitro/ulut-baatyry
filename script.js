@@ -2,7 +2,7 @@
 (() => {
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  // Заставка: тундук → «Улут Баатыры» → сайт
+  // Заставка: логотип → «Улут Баатыры» → сайт
   const intro = document.getElementById('intro');
   const introBtn = document.getElementById('introBtn');
   const root = document.documentElement;
@@ -78,15 +78,6 @@
     }, { passive: true });
   }
 
-  // Подсветка карточек под курсором
-  document.querySelectorAll('.spot').forEach(el => {
-    el.addEventListener('pointermove', e => {
-      const r = el.getBoundingClientRect();
-      el.style.setProperty('--mx', `${e.clientX - r.left}px`);
-      el.style.setProperty('--my', `${e.clientY - r.top}px`);
-    });
-  });
-
   // Активный пункт меню
   const links = [...nav.querySelectorAll('a')];
   const sections = links.map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
@@ -98,32 +89,20 @@
   }, { rootMargin: '-45% 0px -50% 0px' });
   sections.forEach(s => navIO.observe(s));
 
-  // Карусель туров
-  const tours = document.getElementById('tours');
-  document.querySelectorAll('.tour__nav .round-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const card = tours.querySelector('.tcard');
-      tours.scrollBy({ left: (card.offsetWidth + 22) * Number(btn.dataset.dir), behavior: 'smooth' });
-    });
+  // Адреса страниц сервисов — заполнить здесь. Пока адрес пуст, карточка ведёт на форму контактов.
+  const SERVICES = {
+    invest: '',  // Белек Нур Инвест
+    tour: '',    // Ынтымак Тур
+    auto: '',    // Белек Авто
+    realty: '',  // Недвижимость и земли
+  };
+  document.querySelectorAll('.service[data-service]').forEach(card => {
+    const url = SERVICES[card.dataset.service];
+    if (!url) return;
+    card.href = url;
+    card.target = '_blank';
+    card.rel = 'noopener';
   });
-
-  // Счётчики
-  const counters = document.querySelectorAll('[data-count]');
-  const countIO = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (!e.isIntersecting) return;
-      const el = e.target, target = +el.dataset.count, suffix = el.dataset.suffix || '';
-      const start = performance.now(), dur = reduceMotion ? 0 : 1600;
-      const tick = now => {
-        const p = dur ? Math.min((now - start) / dur, 1) : 1;
-        el.textContent = Math.round(target * (1 - Math.pow(1 - p, 3))) + suffix;
-        if (p < 1) requestAnimationFrame(tick);
-      };
-      requestAnimationFrame(tick);
-      countIO.unobserve(el);
-    });
-  }, { threshold: 0.5 });
-  counters.forEach(c => countIO.observe(c));
 
   // Форма заявки → бэкенд (ulut-baatyry-agent, POST /api/leads)
   const form = document.getElementById('form');
@@ -168,8 +147,8 @@
     const input = document.getElementById('chatInput');
     const sendBtn = chatForm.querySelector('.chat__send');
     const SESSION_KEY = 'ubChatSession';
-    const GREETING = 'Здравствуйте! Я цифровой помощник холдинга «Улут Баатыры». ' +
-      'Спросите о турах, недвижимости, инвестициях или автомобилях — подскажу и передам специалисту.';
+    const GREETING = 'Здравствуйте! Я цифровой помощник центра «Улут Баатыры». ' +
+      'Спросите о программах, записи или сотрудничестве — подскажу и передам специалисту.';
     let loaded = false;
 
     // localStorage may be unavailable (private mode): the chat still works, just without memory.
