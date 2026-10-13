@@ -4,15 +4,19 @@
 
   // Полоска прогресса и лёгкий уход заголовка при прокрутке
   const bar = document.getElementById('progress');
-  const hero = document.getElementById('heroInner');
+  const hero = document.querySelector('.hero');
+  const heroInner = document.getElementById('heroInner');
   let ticking = false;
   const onScroll = () => {
     const y = window.scrollY;
     const max = document.documentElement.scrollHeight - window.innerHeight;
     if (bar) bar.style.transform = `scaleX(${max > 0 ? Math.min(y / max, 1) : 0})`;
-    if (hero && !reduceMotion && y < window.innerHeight) {
-      hero.style.transform = `translateY(${(y * 0.16).toFixed(1)}px)`;
-      hero.style.opacity = Math.max(1 - y / (window.innerHeight * 0.75), 0).toFixed(3);
+    if (hero) {
+      // Первый экран гаснет, пока на него наезжает лист; дальше прячем совсем, чтобы не просвечивал
+      const k = Math.min(y / (window.innerHeight * 0.55), 1);
+      hero.style.opacity = (1 - k).toFixed(3);
+      hero.style.visibility = k >= 1 ? 'hidden' : 'visible';
+      if (heroInner && !reduceMotion) heroInner.style.transform = `translate3d(0, ${(k * -40).toFixed(1)}px, 0) scale(${(1 - k * 0.04).toFixed(4)})`;
     }
     ticking = false;
   };

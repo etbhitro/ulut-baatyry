@@ -144,14 +144,11 @@
       <a href="#directions" class="scroll-hint" aria-label="Листать вниз"><span></span></a>
     </section>
 
-    <!-- Бегущая строка со слоганом -->
-    <div class="marquee" aria-hidden="true">
-      <div class="marquee__track">
-        <span data-i18n="hero.slogan">От наследия&nbsp;— к&nbsp;великому будущему</span><svg viewBox="0 0 24 24"><use href="#star"/></svg>
-        <span data-i18n="hero.slogan">От наследия&nbsp;— к&nbsp;великому будущему</span><svg viewBox="0 0 24 24"><use href="#star"/></svg>
-        <span data-i18n="hero.slogan">От наследия&nbsp;— к&nbsp;великому будущему</span><svg viewBox="0 0 24 24"><use href="#star"/></svg>
-        <span data-i18n="hero.slogan">От наследия&nbsp;— к&nbsp;великому будущему</span><svg viewBox="0 0 24 24"><use href="#star"/></svg>
-      </div>
+    <!-- Лист с содержимым: наезжает на первый экран при прокрутке -->
+    <div class="sheet">
+    <!-- Тонкая бегущая строка: слоган и направления. Набор повторён, чтобы лента шла без шва -->
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker__track"><span data-i18n="hero.slogan">От наследия&nbsp;— к&nbsp;великому будущему</span><svg viewBox="0 0 24 24"><use href="#star"/></svg><span data-i18n="d4.h">Инвестиционные проекты</span><svg viewBox="0 0 24 24"><use href="#star"/></svg><span data-i18n="d2.h">Молодёжь и воспитание</span><svg viewBox="0 0 24 24"><use href="#star"/></svg><span data-i18n="d1.h">Туризм, отдых и спорт</span><svg viewBox="0 0 24 24"><use href="#star"/></svg><span data-i18n="hero.slogan">От наследия&nbsp;— к&nbsp;великому будущему</span><svg viewBox="0 0 24 24"><use href="#star"/></svg><span data-i18n="d4.h">Инвестиционные проекты</span><svg viewBox="0 0 24 24"><use href="#star"/></svg><span data-i18n="d2.h">Молодёжь и воспитание</span><svg viewBox="0 0 24 24"><use href="#star"/></svg><span data-i18n="d1.h">Туризм, отдых и спорт</span><svg viewBox="0 0 24 24"><use href="#star"/></svg><span data-i18n="hero.slogan">От наследия&nbsp;— к&nbsp;великому будущему</span><svg viewBox="0 0 24 24"><use href="#star"/></svg><span data-i18n="d4.h">Инвестиционные проекты</span><svg viewBox="0 0 24 24"><use href="#star"/></svg><span data-i18n="d2.h">Молодёжь и воспитание</span><svg viewBox="0 0 24 24"><use href="#star"/></svg><span data-i18n="d1.h">Туризм, отдых и спорт</span><svg viewBox="0 0 24 24"><use href="#star"/></svg><span data-i18n="hero.slogan">От наследия&nbsp;— к&nbsp;великому будущему</span><svg viewBox="0 0 24 24"><use href="#star"/></svg><span data-i18n="d4.h">Инвестиционные проекты</span><svg viewBox="0 0 24 24"><use href="#star"/></svg><span data-i18n="d2.h">Молодёжь и воспитание</span><svg viewBox="0 0 24 24"><use href="#star"/></svg><span data-i18n="d1.h">Туризм, отдых и спорт</span><svg viewBox="0 0 24 24"><use href="#star"/></svg></div>
     </div>
 
     <!-- ============ НАПРАВЛЕНИЯ ============ -->
@@ -166,6 +163,7 @@
         <div class="index">
           <div class="index__list">
             <a class="row reveal" href="invest.html" data-preview="0">
+              <span class="row__img" style="background-image:url(assets/projects/korumdu/view.jpg)"></span>
               <span class="row__num">01</span>
               <span class="row__body">
                 <span class="row__title" role="heading" aria-level="3" data-i18n="d4.h">Инвестиционные проекты</span>
@@ -175,6 +173,7 @@
               <span class="row__arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
             </a>
             <a class="row reveal" href="youth.html" data-preview="1">
+              <span class="row__img" style="background-image:url(yntymak/img/ala-archa.jpg)"></span>
               <span class="row__num">02</span>
               <span class="row__body">
                 <span class="row__title" role="heading" aria-level="3" data-i18n="d2.h">Молодёжь и воспитание</span>
@@ -184,6 +183,7 @@
               <span class="row__arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
             </a>
             <div class="row reveal" data-preview="2">
+              <span class="row__img" style="background-image:url(yntymak/img/jeti-oguz.jpg)"></span>
               <span class="row__num">03</span>
               <span class="row__body">
                 <span class="row__title" role="heading" aria-level="3" data-i18n="d1.h">Туризм, отдых и спорт</span>
@@ -191,6 +191,7 @@
               </span>
             </div>
             <div class="row row--soon reveal">
+              <span class="row__img"></span>
               <span class="row__num" data-i18n="soon.num">Скоро</span>
               <span class="row__body">
                 <span class="row__title" role="heading" aria-level="3" data-i18n="soon.h">Новые сервисы</span>
@@ -223,6 +224,7 @@
         <div class="strip__inner reveal">
           <p class="kicker strip__label" data-i18n="strip.label">Партнёры</p>
           <div class="strip__logos">
+            <div class="strip__track">
             <a class="lockup lockup--yntymak" href="yntymak/index.html" target="_blank" rel="noopener" title="Ынтымак Тур — туры по Кыргызстану">
               <img src="assets/partners/yntymak-tour/yntymak-tour-logo-horizontal.svg" alt="Ынтымак Тур" width="371" height="80" loading="lazy">
             </a>
@@ -236,6 +238,21 @@
             <a class="lockup lockup--ndws service" data-service="ndws" title="NDWS">
               <img src="assets/partners/ndws/ndws-logo.svg" alt="NDWS" width="389" height="148" loading="lazy">
             </a>
+
+            <a aria-hidden="true" tabindex="-1" class="lockup lockup--yntymak" href="yntymak/index.html" target="_blank" rel="noopener" title="Ынтымак Тур — туры по Кыргызстану">
+              <img src="assets/partners/yntymak-tour/yntymak-tour-logo-horizontal.svg" alt="Ынтымак Тур" width="371" height="80" loading="lazy">
+            </a>
+            <a aria-hidden="true" tabindex="-1" class="lockup lockup--invest" href="belek-nur-invest/index.html" target="_blank" rel="noopener" title="Belek Nur Invest — инвестиционные проекты">
+              <img src="assets/partners/belek-nur-invest/belek-nur-invest-logo-horizontal.svg" alt="Belek Nur Invest" width="300" height="80" loading="lazy">
+            </a>
+            <a aria-hidden="true" tabindex="-1" class="lockup lockup--avto service" data-service="auto" title="Белек Авто">
+              <i aria-hidden="true"><b></b><b></b><b></b></i>
+              <span>Белек<em>Авто</em></span>
+            </a>
+            <a aria-hidden="true" tabindex="-1" class="lockup lockup--ndws service" data-service="ndws" title="NDWS">
+              <img src="assets/partners/ndws/ndws-logo.svg" alt="NDWS" width="389" height="148" loading="lazy">
+            </a>
+            </div>
           </div>
         </div>
       </div>
@@ -277,11 +294,11 @@
         </form>
       </div>
     </section>
+    </div><!-- /.sheet -->
   </main>
 
   <!-- ============ FOOTER ============ -->
   <footer class="footer">
-    <div class="footer__word" aria-hidden="true">Улут-Баатыры</div>
     <div class="container footer__inner">
       <div class="footer__brand">
         <a href="#top" class="logo logo--ink"><svg class="logo__mark" viewBox="0 0 100 73"><use href="#horseman"/></svg><span class="logo__text">Улут-Баатыры</span></a>
@@ -316,7 +333,7 @@
         </div>
         <button class="chat__close" id="chatClose" type="button" aria-label="Закрыть чат">×</button>
       </header>
-      <div class="chat__log" id="chatLog" aria-live="polite"></div>
+      <div class="chat__log" id="chatLog" aria-live="polite" data-lenis-prevent></div>
       <form class="chat__form" id="chatForm">
         <label class="form__hp" aria-hidden="true">Сайт<input type="text" name="website" tabindex="-1" autocomplete="off"></label>
         <textarea id="chatInput" name="message" rows="1" maxlength="1000" placeholder="Напишите сообщение…" data-i18n-attr="placeholder:chat.ph" required></textarea>
@@ -331,5 +348,7 @@
   <script src="i18n.js"></script>
   <script src="script.js"></script>
   <script src="home.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.20/dist/lenis.min.js"></script>
+  <script src="motion.js"></script>
 </body>
 </html>

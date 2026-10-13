@@ -1,6 +1,6 @@
 /* =========================================================
-   Улут-Баатыры — главная страница
-   Внутренние страницы (invest.html, youth.html) пока на styles.css.
+   Улут-Баатыры — главная и внутренние страницы (invest.html, youth.html).
+   Старый styles.css больше не подключается.
    ========================================================= */
 :root {
   --ink:    #0b1e36;
@@ -47,14 +47,10 @@ button { font: inherit; color: inherit; }
 .container { width: min(1280px, 100% - 48px); margin-inline: auto; }
 
 /* У антиквы по умолчанию «старинные» цифры разной высоты — включаем ровные */
-h1, h2, .display, .row__title, .row__num, .section__count, .index__num, .contact__list a, .contact__list p, .footer__word, .marquee, .intro__title strong, .logo__text {
+h1, h2, .display, .row__title, .row__num, .section__count, .index__num, .contact__list a, .contact__list p, .intro__title strong, .logo__text {
   font-family: var(--font-head);
   font-variant-numeric: lining-nums;
 }
-
-/* ---------- Появление при прокрутке ---------- */
-.js .reveal { opacity: 0; transform: translateY(28px); transition: opacity 1s var(--ease) var(--d, 0s), transform 1s var(--ease) var(--d, 0s); }
-.js .reveal.is-in { opacity: 1; transform: none; }
 
 /* ---------- Прогресс чтения ---------- */
 .progress { position: fixed; inset: 0 0 auto; height: 2px; z-index: 120; pointer-events: none; }
@@ -202,13 +198,6 @@ h1, h2, .display, .row__title, .row__num, .section__count, .index__num, .contact
 .scroll-hint span { position: absolute; inset: 0; background: linear-gradient(180deg, transparent, #fff); animation: drip 2.4s var(--ease) infinite; }
 @keyframes drip { 0% { transform: translateY(-100%); } 60%, 100% { transform: translateY(100%); } }
 
-/* ---------- Бегущая строка ---------- */
-.marquee { overflow: hidden; padding: clamp(40px, 7vw, 84px) 0 0; user-select: none; }
-.marquee__track { display: flex; align-items: center; gap: clamp(28px, 4vw, 56px); width: max-content; animation: marquee 60s linear infinite; }
-.marquee span { font-style: italic; font-weight: 400; font-size: clamp(2.6rem, 7vw, 6rem); line-height: 1.1; white-space: nowrap; color: transparent; -webkit-text-stroke: 1px rgba(11, 30, 54, .34); }
-.marquee svg { width: clamp(18px, 2vw, 28px); height: auto; flex: none; color: var(--gold); }
-@keyframes marquee { to { transform: translateX(-50%); } }
-
 /* ---------- Секции ---------- */
 .section { padding: clamp(64px, 10vw, 130px) 0; }
 .section__head { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; padding-bottom: 26px; }
@@ -306,7 +295,6 @@ a.row:hover .row__arrow, a.row:focus-visible .row__arrow { background: var(--ink
 
 /* ---------- Подвал ---------- */
 .footer { position: relative; overflow: hidden; padding-top: clamp(30px, 5vw, 60px); border-top: 1px solid rgba(255, 255, 255, .7); background: rgba(255, 255, 255, .46); -webkit-backdrop-filter: blur(22px); backdrop-filter: blur(22px); }
-.footer__word { font-weight: 500; font-size: clamp(4rem, 15.4vw, 15rem); line-height: .8; letter-spacing: -.03em; text-align: center; white-space: nowrap; color: transparent; -webkit-text-stroke: 1px rgba(11, 30, 54, .2); user-select: none; }
 .footer__inner { display: flex; justify-content: space-between; gap: 40px; flex-wrap: wrap; padding: clamp(36px, 5vw, 60px) 0; }
 .footer__brand { display: grid; gap: 14px; align-content: start; }
 .footer__motto { display: flex; align-items: center; gap: 10px; font-size: .78rem; font-weight: 500; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); }
@@ -360,6 +348,160 @@ a.row:hover .row__arrow, a.row:focus-visible .row__arrow { background: var(--ink
 .chat__send:disabled { opacity: .45; cursor: default; }
 .chat__foot { padding: 0 16px 14px; font-size: .8rem; color: var(--muted); text-align: center; }
 .chat__foot a { color: var(--ink); border-bottom: 1px solid var(--gold); }
+
+/* =========================================================
+   Внутренние страницы: invest.html, youth.html
+   ========================================================= */
+.subpage .header { color: var(--ink); }
+.logo__text br { display: none; }
+.logo--light { color: var(--ink); }
+/* на внутренних страницах кнопки стоят на светлом фоне */
+.btn--primary { background: var(--ink); color: #fff; box-shadow: 0 16px 40px -16px rgba(11, 30, 54, .6); }
+.btn--primary:hover { background: #13294a; }
+.btn--ghost { background: rgba(255, 255, 255, .55); border-color: rgba(11, 30, 54, .16); color: var(--ink); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); }
+.btn--ghost:hover { background: #fff; }
+.nw { white-space: nowrap; }
+
+/* Страница инвестпроектов — без фото озера: мягкое небо и соколы */
+.backdrop--plain { background: radial-gradient(1100px 620px at 78% 0%, rgba(255, 255, 255, .95), transparent 62%), linear-gradient(180deg, #d3e4f4 0%, #e6f0f9 48%, #f4f8fc 100%); }
+.backdrop--plain::after { content: none; }
+/* Страница молодёжи: озеро сразу в мягком, размытом виде */
+.subpage .backdrop { --fade: 1; }
+
+.page-head { padding-top: clamp(130px, 17vw, 200px); }
+.page-head > .container { counter-reset: project; }
+.back { display: inline-flex; gap: 10px; font-size: .78rem; font-weight: 500; letter-spacing: .2em; text-transform: uppercase; color: var(--muted); transition: color .3s; }
+.back:hover { color: var(--gold); }
+.page-head__top { margin: 30px 0 clamp(8px, 2vw, 24px); padding-bottom: clamp(30px, 4.6vw, 60px); }
+.page-head .section__head { display: block; padding: 0; }
+.page-head__brand { height: 52px; width: auto; margin: 0 0 22px -12px; }
+.h2, .project h3, .post h2 { font-family: var(--font-head); font-variant-numeric: lining-nums; font-weight: 500; color: var(--ink); letter-spacing: -.015em; }
+.h2 { font-size: clamp(2.9rem, 7.4vw, 6.4rem); line-height: .96; }
+.section__lead { margin-top: 20px; max-width: 46ch; font-size: 1.06rem; }
+
+/* ---------- Проекты ---------- */
+.project {
+  counter-increment: project;
+  display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(0, .92fr); gap: clamp(26px, 5vw, 80px); align-items: center;
+  padding: clamp(30px, 4.6vw, 64px) 0; border-top: 1px solid var(--line);
+}
+.project:nth-of-type(even) .project__cover { order: 2; }
+.project__cover { position: relative; aspect-ratio: 16 / 10; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); background: #c9d8e7; }
+.project__cover img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.8s var(--ease); }
+.project:hover .project__cover img { transform: scale(1.05); }
+.project__cover .project__img--right { object-position: 78% 50%; }
+.project__cover::after {
+  content: counter(project, decimal-leading-zero); position: absolute; left: 24px; bottom: 14px;
+  font: italic 500 clamp(2.6rem, 4.4vw, 4rem)/1 var(--font-head); font-variant-numeric: lining-nums; color: #fff; text-shadow: 0 4px 30px rgba(8, 20, 38, .55);
+}
+.project__body { display: grid; gap: 28px; justify-items: start; }
+.project__tag { font-size: .78rem; font-weight: 500; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); }
+.project h3 { margin: 16px 0; font-size: clamp(2rem, 3.7vw, 3.3rem); line-height: 1.02; }
+.project__body p:not(.project__tag):not(.project__status) { max-width: 46ch; }
+.project__status { display: inline-block; margin-bottom: 14px; padding: 6px 14px; border: 1px solid rgba(179, 138, 62, .55); border-radius: 100px; font-size: .82rem; font-weight: 500; color: #8a6a2c; }
+
+/* ---------- Записи (молодёжь) ---------- */
+.post { display: grid; grid-template-columns: minmax(0, 1fr) minmax(300px, 420px); gap: clamp(28px, 5vw, 80px); align-items: start; padding: clamp(30px, 4.6vw, 60px) 0; border-top: 1px solid var(--line); }
+.post h2 { margin: 16px 0 22px; font-size: clamp(2rem, 3.8vw, 3.3rem); line-height: 1.04; }
+.post__body p { max-width: 62ch; margin-bottom: 1em; }
+.post__body .project__tag { margin: 0; }
+.post__source { font-size: .88rem; color: var(--muted); }
+.post__media { overflow: hidden; border: 1px solid rgba(255, 255, 255, .8); border-radius: var(--radius); background: #fff; box-shadow: var(--shadow); }
+.post__media iframe { display: block; width: 100%; height: 640px; border: 0; }
+
+@media (max-width: 900px) {
+  .project, .post { grid-template-columns: 1fr; }
+  .project:nth-of-type(even) .project__cover { order: 0; }
+  .subpage .nav { display: none; }
+}
+
+/* =========================================================
+   Движение: переходы, свайпы, постоянное лёгкое движение
+   ========================================================= */
+html.smooth { scroll-behavior: auto; }
+
+/* ---------- Переход между страницами (браузеры с View Transitions) ---------- */
+@view-transition { navigation: auto; }
+::view-transition-old(root) { animation: page-out .42s cubic-bezier(.4, 0, .2, 1) both; }
+::view-transition-new(root) { animation: page-in .7s cubic-bezier(.2, .7, .2, 1) both; }
+@keyframes page-out { to { opacity: 0; transform: translateY(-22px) scale(.99); } }
+@keyframes page-in { from { opacity: 0; transform: translateY(44px); } }
+
+/* ---------- Появление блоков: чётко, без размытия ---------- */
+.js .reveal { opacity: 0; transform: translate3d(0, 22px, 0); transition: opacity .8s var(--ease) var(--d, 0s), transform 1s var(--ease) var(--d, 0s); }
+.js .reveal.is-in { opacity: 1; transform: none; }
+/* Заголовок внутренней страницы выезжает из-за линии. Обрезку ставим только на вложенный элемент:
+   если обрезать сам наблюдаемый блок, браузер считает его невидимым и появление не срабатывает. */
+.js .page-head__top.reveal .h2 { clip-path: inset(0 0 100% 0); transform: translate3d(0, 24px, 0); transition: clip-path 1.1s var(--ease), transform 1.1s var(--ease); }
+.js .page-head__top.reveal.is-in .h2 { clip-path: inset(0 0 -25% 0); transform: none; }
+.js .display.reveal { transform: translate3d(0, 34px, 0); transition-duration: .9s, 1.2s; }
+/* картинки открываются шторкой */
+.js .index__preview.reveal .index__frame, .js .project.reveal .project__cover { clip-path: inset(0 100% 0 0 round 28px); transition: clip-path 1.3s var(--ease) .1s; }
+.js .index__preview.reveal.is-in .index__frame, .js .project.reveal.is-in .project__cover { clip-path: inset(0 0 0 0 round 28px); }
+.js .project.reveal:nth-of-type(even) .project__cover { clip-path: inset(0 0 0 100% round 28px); }
+.js .project.reveal.is-in:nth-of-type(even) .project__cover { clip-path: inset(0 0 0 0 round 28px); }
+
+/* ---------- Первый экран стоит на месте, контент наезжает листом ---------- */
+.hero { position: sticky; top: 0; z-index: 0; will-change: opacity, transform; }
+.sheet {
+  position: relative; z-index: 2; margin-top: -44px;
+  border-radius: 44px 44px 0 0; border-top: 1px solid rgba(255, 255, 255, .85);
+  background: linear-gradient(180deg, rgba(246, 249, 252, .96) 0%, rgba(246, 249, 252, .9) 120px, rgba(246, 249, 252, .62) 520px, rgba(246, 249, 252, .5) 100%);
+  box-shadow: 0 -40px 90px -40px rgba(8, 20, 38, .55);
+}
+.footer { position: relative; z-index: 2; }
+/* лист уже осветляет фон, вторая вуаль не нужна */
+.backdrop::after { background: linear-gradient(180deg, rgba(240, 246, 252, .16), rgba(244, 248, 252, .26)); }
+.subpage .backdrop::after { background: linear-gradient(180deg, rgba(240, 246, 252, .5), rgba(244, 248, 252, .64)); }
+
+/* ---------- Постоянное движение: фото медленно «дышит» ---------- */
+.backdrop img { animation: drift 46s ease-in-out infinite alternate; }
+@keyframes drift { from { transform: scale(1.02) translate3d(0, 0, 0); } to { transform: scale(1.09) translate3d(-1.4%, -1%, 0); } }
+.index__frame img.is-on { animation: breathe-img 16s ease-in-out infinite alternate; }
+@keyframes breathe-img { from { transform: scale(1); } to { transform: scale(1.07); } }
+
+/* ---------- Тонкая бегущая строка ---------- */
+.ticker { overflow: hidden; padding: 26px 0; border-bottom: 1px solid var(--line); user-select: none; -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
+.ticker__track { display: flex; align-items: center; gap: 34px; width: max-content; animation: slide 48s linear infinite; }
+.ticker span { font-size: .76rem; font-weight: 500; letter-spacing: .26em; text-transform: uppercase; white-space: nowrap; color: var(--ink-2); }
+.ticker svg { width: 9px; height: 9px; flex: none; color: var(--gold); }
+@keyframes slide { to { transform: translate3d(-50%, 0, 0); } }
+
+/* ---------- Партнёры: логотипы плывут по кругу ---------- */
+.strip__logos { display: block; overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent); mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent); }
+.strip__track { display: flex; align-items: center; gap: clamp(48px, 6vw, 96px); width: max-content; padding: 14px 0; animation: slide 38s linear infinite; }
+.strip__logos:hover .strip__track { animation-play-state: paused; }
+
+/* ---------- Направления на планшете и телефоне: карточки листаются свайпом ---------- */
+.row__img { display: none; }
+@media (max-width: 1080px) {
+  .index__list {
+    display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch;
+    margin-inline: -24px; padding: 6px 24px 22px; scrollbar-width: none;
+  }
+  .index__list::-webkit-scrollbar { display: none; }
+  .index__list .row, .index__list .row:last-child {
+    position: relative; flex: 0 0 min(80vw, 400px); scroll-snap-align: center;
+    display: flex; flex-direction: column; align-items: stretch; gap: 0; padding: 0 0 24px;
+    border: 1px solid rgba(255, 255, 255, .85); border-radius: var(--radius); overflow: hidden;
+    background: rgba(255, 255, 255, .6); box-shadow: 0 18px 44px -26px rgba(11, 30, 54, .4);
+  }
+  .row::before { content: none; }
+  .row__img { display: block; aspect-ratio: 4 / 3; background: #c9d8e7 center / cover no-repeat; }
+  .row--soon .row__img { background: linear-gradient(135deg, #dbe7f3, #f1e6cf); }
+  .row__num { position: absolute; left: 20px; top: 16px; color: #fff; text-shadow: 0 2px 18px rgba(8, 20, 38, .6); }
+  .row--soon .row__num { color: var(--ink-2); text-shadow: none; }
+  .row__body { padding: 22px 22px 0; }
+  .row:hover .row__body, .row:focus-visible .row__body { transform: none; }
+  .row__title { font-size: clamp(1.7rem, 6.4vw, 2.3rem); }
+  .row__more { display: none; }
+  .row__arrow { position: absolute; right: 16px; top: 16px; width: 46px; height: 46px; background: rgba(255, 255, 255, .9); border-color: transparent; color: var(--ink); }
+  .strip__logos { width: 100%; }
+}
+@media (max-width: 860px) {
+  .sheet { margin-top: -30px; border-radius: 30px 30px 0 0; }
+  .index__list { margin-inline: -18px; padding-inline: 18px; }
+}
 
 /* ---------- Экраны поменьше ---------- */
 @media (max-width: 1080px) {
