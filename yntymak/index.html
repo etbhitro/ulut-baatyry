@@ -46,14 +46,14 @@
     </section>
 
     <!-- ============ НАПРАВЛЕНИЯ ============ -->
-    <!-- Фото локации: положить файл в yntymak/img/<имя>.jpg и заменить блок .place__ph на
-         <img src="img/<имя>.jpg" alt="..." loading="lazy">. Новое направление = ещё одна <article class="place">. -->
+    <!-- Фото локаций: yntymak/img/<имя>.jpg (960px по ширине), сейчас снимки с Wikimedia Commons, авторы указаны в подвале (.footer__credits).
+         Своё фото: заменить файл и убрать автора из подвала. Новое направление = ещё одна <article class="place">. -->
     <section class="section" id="tours">
       <div class="container">
         <p class="eyebrow eyebrow--dark">Направления</p>
         <div class="places">
           <article class="place">
-            <div class="place__media"><div class="place__ph"><span>Фото скоро</span></div></div>
+            <div class="place__media"><img src="img/issyk-kul.jpg" alt="Берег Иссык-Куля" width="960" height="620" loading="lazy"></div>
             <div class="place__body">
               <h3>Иссык-Куль</h3>
               <p>Горное озеро, пляжи и ущелья побережья.</p>
@@ -61,7 +61,7 @@
             </div>
           </article>
           <article class="place">
-            <div class="place__media"><div class="place__ph"><span>Фото скоро</span></div></div>
+            <div class="place__media"><img src="img/son-kul.jpg" alt="Юрточный лагерь у озера Сон-Куль" width="960" height="720" loading="lazy"></div>
             <div class="place__body">
               <h3>Сон-Куль</h3>
               <p>Высокогорное озеро и юрточные лагеря на джайлоо.</p>
@@ -69,7 +69,7 @@
             </div>
           </article>
           <article class="place">
-            <div class="place__media"><div class="place__ph"><span>Фото скоро</span></div></div>
+            <div class="place__media"><img src="img/ala-archa.jpg" alt="Горы в национальном парке Ала-Арча" width="960" height="596" loading="lazy"></div>
             <div class="place__body">
               <h3>Ала-Арча</h3>
               <p>Национальный парк рядом с Бишкеком.</p>
@@ -77,7 +77,7 @@
             </div>
           </article>
           <article class="place">
-            <div class="place__media"><div class="place__ph"><span>Фото скоро</span></div></div>
+            <div class="place__media"><img src="img/jeti-oguz.jpg" alt="Красные скалы Джети-Огуз" width="960" height="606" loading="lazy"></div>
             <div class="place__body">
               <h3>Каракол и Джети-Огуз</h3>
               <p>Красные скалы, ущелья и горячие источники.</p>
@@ -85,7 +85,7 @@
             </div>
           </article>
           <article class="place">
-            <div class="place__media"><div class="place__ph"><span>Фото скоро</span></div></div>
+            <div class="place__media"><img src="img/sary-chelek.jpg" alt="Озеро Сары-Челек" width="960" height="639" loading="lazy"></div>
             <div class="place__body">
               <h3>Сары-Челек</h3>
               <p>Заповедное озеро среди ореховых лесов.</p>
@@ -93,7 +93,7 @@
             </div>
           </article>
           <article class="place">
-            <div class="place__media"><div class="place__ph"><span>Фото скоро</span></div></div>
+            <div class="place__media"><img src="img/arslanbob.jpg" alt="Арсланбоб у подножия гор" width="960" height="640" loading="lazy"></div>
             <div class="place__body">
               <h3>Арсланбоб</h3>
               <p>Реликтовые ореховые леса и водопады.</p>
@@ -161,6 +161,11 @@
     <div class="container footer__inner">
       <img src="../assets/partners/yntymak-tour/yntymak-tour-logo-horizontal-white.svg" alt="Ынтымак Тур" width="371" height="80">
       <p>Ынтымак Тур — туристическое направление <a href="../index.html">«Улут-Баатыры»</a></p>
+      <p class="footer__credits">Фото: <a href="https://commons.wikimedia.org/wiki/File:Issyk-Kul,_Kyrgyzstan_(42812885110).jpg" target="_blank" rel="noopener">Ninara</a> (CC BY 2.0),
+        <a href="https://commons.wikimedia.org/wiki/File:Yurt_camp_near_Song-Kul_lake_2026_01.jpg" target="_blank" rel="noopener">AseinMad</a>,
+        <a href="https://commons.wikimedia.org/wiki/File:Mountains_in_the_National_Park_Ala_Archa_01.jpg" target="_blank" rel="noopener">Vilya Shoni</a>,
+        <a href="https://commons.wikimedia.org/wiki/File:Sary_Chelek_Lake.jpg" target="_blank" rel="noopener">Kondephy</a> (CC BY-SA 4.0),
+        <a href="https://commons.wikimedia.org/wiki/File:Horses_in_Jeti-%C3%96g%C3%BCz_Rocks.jpg" target="_blank" rel="noopener">Bgag</a> (CC0). Wikimedia Commons.</p>
       <p class="footer__copy">© <span id="year"></span> Ынтымак Тур</p>
     </div>
   </footer>

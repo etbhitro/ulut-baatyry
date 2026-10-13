@@ -138,6 +138,8 @@ ul { margin: 0; padding: 0; list-style: none; }
 .footer p { margin: 0; font-size: .95rem; }
 .footer a { color: #fff; text-decoration: underline; text-underline-offset: 3px; }
 .footer__copy { font-size: .88rem; }
+.footer__credits { flex-basis: 100%; font-size: .78rem; color: rgba(255,255,255,.45); }
+.footer .footer__credits a { color: rgba(255,255,255,.65); }
 
 /* ---------- Responsive ---------- */
 @media (max-width: 1000px) {
