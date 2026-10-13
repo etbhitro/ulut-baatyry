@@ -7,8 +7,8 @@
   <meta name="description" content="«Улут-Баатыры» («Герои нации»): от наследия — к великому будущему. Проекты и сервисы, которые берегут землю и традиции и работают на будущее Кыргызстана.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&family=Montserrat:wght@500;600;700&family=Tektur:wght@900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Golos+Text:wght@400;500;600&family=Tektur:wght@900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="home.css">
   <script>
     // Заставка с логотипом: показывается один раз за визит (до закрытия вкладки)
     (function () {
@@ -61,11 +61,14 @@
     </defs>
   </svg>
 
-  <!-- ============ ЗАСТАВКА: логотип → «Улут-Баатыры» ============ -->
+  <!-- Полоска прогресса чтения -->
+  <div class="progress" aria-hidden="true"><i id="progress"></i></div>
+
+  <!-- ============ ЗАСТАВКА: всадник → «Улут-Баатыры» ============ -->
   <div class="intro" id="intro">
     <button class="intro__btn" id="introBtn" type="button" aria-label="Открыть сайт «Улут-Баатыры»">
-      <span class="intro__halo" aria-hidden="true"></span>
-      <svg class="intro__mark" viewBox="0 0 48 48" aria-hidden="true"><use href="#horseman"/></svg>
+      <span class="intro__ring" aria-hidden="true"></span>
+      <svg class="intro__mark" viewBox="0 0 100 73" aria-hidden="true"><use href="#horseman"/></svg>
     </button>
     <div class="intro__title" aria-hidden="true">
       <strong>Улут-Баатыры</strong>
@@ -74,7 +77,7 @@
     <p class="intro__hint" data-i18n="intro.hint">Нажмите на всадника</p>
   </div>
 
-  <!-- Фон всей страницы: одно фото озера на месте. На первом экране оно в полную силу, при прокрутке бледнеет (script.js) -->
+  <!-- Фон всей страницы: одно фото озера на месте. На первом экране оно в полную силу, при прокрутке мягко размывается (script.js) -->
   <div class="backdrop" aria-hidden="true">
     <img src="assets/hero-issyk-kul-2560.jpg"
          srcset="assets/hero-issyk-kul-1400.jpg 1400w, assets/hero-issyk-kul-2560.jpg 2560w"
@@ -88,8 +91,8 @@
   <header class="header" id="header">
     <div class="container header__inner">
       <a href="#top" class="logo" aria-label="Улут-Баатыры — на главную">
-        <svg class="logo__mark"><use href="#horseman"/></svg>
-        <span class="logo__text">Улут-<br>Баатыры</span>
+        <svg class="logo__mark" viewBox="0 0 100 73"><use href="#horseman"/></svg>
+        <span class="logo__text">Улут-Баатыры</span>
       </a>
       <nav class="nav" id="nav">
         <a href="#directions" data-i18n="nav.directions">Направления</a>
@@ -97,9 +100,8 @@
       </nav>
       <div class="lang">
         <button class="lang__btn" type="button" aria-haspopup="true" aria-expanded="false" aria-label="Язык · Тил · Language · 语言 · Dil">
-          <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.6 4 5.6 4 9s-1.400 6.400-4 9c-2.600-2.600-4-5.600-4-9s1.400-6.400 4-9z"/></g></svg>
+          <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.6 4 5.6 4 9s-1.400 6.400-4 9c-2.600-2.600-4-5.600-4-9s1.400-6.400 4-9z"/></g></svg>
           <span data-lang-current>RU</span>
-          <svg class="lang__chev" viewBox="0 0 24 24" width="12" height="12" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </button>
         <div class="lang__menu" hidden>
           <button type="button" data-lang="ru" lang="ru" aria-pressed="true">Русский</button>
@@ -109,73 +111,132 @@
           <button type="button" data-lang="tr" lang="tr" aria-pressed="false">Türkçe</button>
         </div>
       </div>
-      <a href="#contact" class="btn btn--primary btn--sm header__cta" data-i18n="header.cta">Связаться</a>
+      <a href="#contact" class="btn btn--glass btn--sm header__cta" data-i18n="header.cta">Связаться</a>
       <button class="burger" id="burger" aria-label="Меню" aria-expanded="false"><span></span><span></span></button>
     </div>
   </header>
 
   <main id="top">
     <!-- ============ HERO ============ -->
+    <!-- Фото озера — общий фон страницы (.backdrop); здесь только затемнение под текст -->
     <section class="hero">
-      <!-- Фото озера — общий фон страницы (.backdrop); здесь только светлая вуаль под текст -->
-      <div class="hero__sky"></div>
-
-      <div class="container hero__content">
-        <p class="eyebrow reveal"><span class="dot"></span> <span data-i18n="hero.eyebrow">Герои нации · Кыргызстан</span></p>
-        <h1 class="hero__title reveal">
-          <span class="line" data-i18n="hero.title">Улут-Баатыры.</span>
-          <span class="line line--accent line--slogan" data-i18n="hero.slogan">От наследия&nbsp;— к&nbsp;великому будущему</span>
+      <div class="hero__veil" aria-hidden="true"></div>
+      <div class="container hero__inner" id="heroInner">
+        <p class="hero__meta reveal">
+          <span data-i18n="hero.eyebrow">Герои нации · Кыргызстан</span>
+          <i aria-hidden="true"></i>
+          <span class="hero__coords" aria-hidden="true">42°27′ N · 77°16′ E</span>
+        </p>
+        <h1 class="hero__title">
+          <span class="hero__name reveal" data-i18n="hero.title">Улут-Баатыры.</span>
+          <span class="hero__slogan reveal" data-i18n="hero.slogan">От наследия&nbsp;— к&nbsp;великому будущему</span>
         </h1>
-        <p class="hero__lead reveal" data-i18n="hero.lead">Бережём землю, историю и традиции&nbsp;— и строим на них проекты, которые останутся следующим поколениям.</p>
-        <div class="hero__actions reveal">
-          <a href="#directions" class="btn btn--primary"><span data-i18n="nav.directions">Направления</span>
-            <svg viewBox="0 0 24 24" width="18" height="18"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
-          <a href="#contact" class="btn btn--ghost" data-i18n="hero.btn2">Связаться с нами</a>
+        <div class="hero__foot reveal">
+          <p class="hero__lead" data-i18n="hero.lead">Бережём землю, историю и традиции&nbsp;— и строим на них проекты, которые останутся следующим поколениям.</p>
+          <div class="hero__actions">
+            <a href="#directions" class="btn btn--light"><span data-i18n="nav.directions">Направления</span>
+              <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a href="#contact" class="btn btn--glass" data-i18n="hero.btn2">Связаться с нами</a>
+          </div>
         </div>
       </div>
-
       <a href="#directions" class="scroll-hint" aria-label="Листать вниз"><span></span></a>
     </section>
 
-    <!-- ============ НАПРАВЛЕНИЯ ============ -->
-    <!-- Новое направление или сервис = ещё одна <article class="card"> перед карточкой card--soon -->
-    <section class="section directions" id="directions">
-      <div class="container ornament reveal" aria-hidden="true">
-        <span></span>
-        <svg viewBox="0 0 100 100"><use href="#wreath"/><use href="#star" x="40" y="38" width="20" height="20"/></svg>
-        <span></span>
+    <!-- Бегущая строка со слоганом -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span data-i18n="hero.slogan">От наследия&nbsp;— к&nbsp;великому будущему</span><svg viewBox="0 0 24 24"><use href="#star"/></svg>
+        <span data-i18n="hero.slogan">От наследия&nbsp;— к&nbsp;великому будущему</span><svg viewBox="0 0 24 24"><use href="#star"/></svg>
+        <span data-i18n="hero.slogan">От наследия&nbsp;— к&nbsp;великому будущему</span><svg viewBox="0 0 24 24"><use href="#star"/></svg>
+        <span data-i18n="hero.slogan">От наследия&nbsp;— к&nbsp;великому будущему</span><svg viewBox="0 0 24 24"><use href="#star"/></svg>
       </div>
+    </div>
+
+    <!-- ============ НАПРАВЛЕНИЯ ============ -->
+    <!-- Новое направление = ещё одна строка .row перед .row--soon; картинка для него — ещё один <img> в .index__preview (порядок тот же, что у data-preview) -->
+    <section class="section directions" id="directions">
       <div class="container">
-        <div class="section__head reveal">
-          <p class="eyebrow"><span class="dot"></span> <span data-i18n="nav.directions">Направления</span></p>
+        <header class="section__head reveal">
+          <p class="kicker" data-i18n="nav.directions">Направления</p>
+          <span class="section__count" aria-hidden="true">03</span>
+        </header>
+
+        <div class="index">
+          <div class="index__list">
+            <a class="row reveal" href="invest.html" data-preview="0">
+              <span class="row__num">01</span>
+              <span class="row__body">
+                <span class="row__title" role="heading" aria-level="3" data-i18n="d4.h">Инвестиционные проекты</span>
+                <span class="row__text" data-i18n="d4.p">Туристические и промышленные зоны на участках разной площади.</span>
+              </span>
+              <span class="row__more" data-i18n="d4.more">Смотреть проекты</span>
+              <span class="row__arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            </a>
+            <a class="row reveal" href="youth.html" data-preview="1">
+              <span class="row__num">02</span>
+              <span class="row__body">
+                <span class="row__title" role="heading" aria-level="3" data-i18n="d2.h">Молодёжь и воспитание</span>
+                <span class="row__text" data-i18n="d2.p">Лагерные смены с наставниками: физическая подготовка, история и культура, дисциплина, лидерство.</span>
+              </span>
+              <span class="row__more" data-i18n="d2.more">События и новости</span>
+              <span class="row__arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            </a>
+            <div class="row reveal" data-preview="2">
+              <span class="row__num">03</span>
+              <span class="row__body">
+                <span class="row__title" role="heading" aria-level="3" data-i18n="d1.h">Туризм, отдых и спорт</span>
+                <span class="row__text" data-i18n="d1.p">Туристический комплекс, агротуризм и путешествия под ключ: от билетов до организации поездки.</span>
+              </span>
+            </div>
+            <div class="row row--soon reveal">
+              <span class="row__num" data-i18n="soon.num">Скоро</span>
+              <span class="row__body">
+                <span class="row__title" role="heading" aria-level="3" data-i18n="soon.h">Новые сервисы</span>
+                <span class="row__text" data-i18n="soon.p">Готовим к запуску ещё несколько направлений. Расскажем о них здесь.</span>
+              </span>
+            </div>
+          </div>
+
+          <aside class="index__preview reveal" aria-hidden="true">
+            <div class="index__frame">
+              <img class="is-on" src="assets/projects/korumdu/view.jpg" alt="" loading="lazy">
+              <img src="yntymak/img/ala-archa.jpg" alt="" loading="lazy">
+              <img src="yntymak/img/jeti-oguz.jpg" alt="" loading="lazy">
+            </div>
+            <span class="index__num" id="previewNum">01</span>
+          </aside>
         </div>
-        <div class="cards cards--3">
-          <a class="card card--link reveal" href="invest.html">
-            <span class="card__num">01</span>
-            <h3 data-i18n="d4.h">Инвестиционные проекты</h3>
-            <p data-i18n="d4.p">Туристические и промышленные зоны на участках разной площади.</p>
-            <span class="card__more"><span data-i18n="d4.more">Смотреть проекты</span> →</span>
-          </a>
-          <a class="card card--link reveal" href="youth.html">
-            <span class="card__num">02</span>
-            <h3 data-i18n="d2.h">Молодёжь и воспитание</h3>
-            <p data-i18n="d2.p">Лагерные смены с наставниками: физическая подготовка, история и культура, дисциплина, лидерство.</p>
-            <span class="card__more"><span data-i18n="d2.more">События и новости</span> →</span>
-          </a>
-          <article class="card reveal">
-            <span class="card__num">03</span>
-            <h3 data-i18n="d1.h">Туризм, отдых и спорт</h3>
-            <p data-i18n="d1.p">Туристический комплекс, агротуризм и путешествия под ключ: от билетов до организации поездки.</p>
-          </article>
-          <article class="card card--soon reveal">
-            <span class="card__num" data-i18n="soon.num">Скоро</span>
-            <h3 data-i18n="soon.h">Новые сервисы</h3>
-            <p data-i18n="soon.p">Готовим к запуску ещё несколько направлений. Расскажем о них здесь.</p>
-          </article>
-        </div>
+
         <div class="section__cta reveal">
-          <a href="#contact" class="btn btn--primary" data-i18n="dir.cta">Задать вопрос по направлению</a>
+          <a href="#contact" class="btn btn--ink" data-i18n="dir.cta">Задать вопрос по направлению</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ПАРТНЁРЫ ============ -->
+    <!-- «Ынтымак Тур» и Belek Nur Invest ведут на свои лендинги в папках yntymak/ и belek-nur-invest/.
+         Адреса остальных партнёров — объект SERVICES в script.js; пока адрес пуст, логотип не кликается. -->
+    <section class="strip" aria-label="Партнёры">
+      <div class="container">
+        <div class="strip__inner reveal">
+          <p class="kicker strip__label" data-i18n="strip.label">Партнёры</p>
+          <div class="strip__logos">
+            <a class="lockup lockup--yntymak" href="yntymak/index.html" target="_blank" rel="noopener" title="Ынтымак Тур — туры по Кыргызстану">
+              <img src="assets/partners/yntymak-tour/yntymak-tour-logo-horizontal.svg" alt="Ынтымак Тур" width="371" height="80" loading="lazy">
+            </a>
+            <a class="lockup lockup--invest" href="belek-nur-invest/index.html" target="_blank" rel="noopener" title="Belek Nur Invest — инвестиционные проекты">
+              <img src="assets/partners/belek-nur-invest/belek-nur-invest-logo-horizontal.svg" alt="Belek Nur Invest" width="300" height="80" loading="lazy">
+            </a>
+            <a class="lockup lockup--avto service" data-service="auto" title="Белек Авто">
+              <i aria-hidden="true"><b></b><b></b><b></b></i>
+              <span>Белек<em>Авто</em></span>
+            </a>
+            <a class="lockup lockup--ndws service" data-service="ndws" title="NDWS">
+              <img src="assets/partners/ndws/ndws-logo.svg" alt="NDWS" width="389" height="148" loading="lazy">
+            </a>
+          </div>
         </div>
       </div>
     </section>
@@ -184,17 +245,15 @@
     <section class="section contact" id="contact">
       <div class="container contact__grid">
         <div class="contact__info">
-          <p class="eyebrow reveal"><span class="dot"></span> <span data-i18n="nav.contact">Контакты</span></p>
-          <h2 class="h2 reveal" data-i18n="contact.h2">Давайте строить<br>вместе</h2>
-          <p class="reveal" data-i18n="contact.lead">Оставьте заявку, и мы свяжемся с вами в течение рабочего дня.</p>
+          <p class="kicker reveal" data-i18n="nav.contact">Контакты</p>
+          <h2 class="display reveal" data-i18n="contact.h2">Давайте строить<br>вместе</h2>
+          <p class="contact__lead reveal" data-i18n="contact.lead">Оставьте заявку, и мы свяжемся с вами в течение рабочего дня.</p>
           <ul class="contact__list reveal">
             <li><span data-i18n="contact.phone">Телефон</span><a href="tel:+996770117111">+996 770 117 111</a></li>
             <li><span>E-mail</span><a href="mailto:ulutbaatyry@gmail.com">ulutbaatyry@gmail.com</a></li>
             <li><span data-i18n="contact.address">Адрес</span><p data-i18n="contact.city">г. Бишкек</p></li>
+            <li><span>Telegram</span><a href="https://t.me/Ulut_Baatyry_bot" target="_blank" rel="noopener">@Ulut_Baatyry_bot</a></li>
           </ul>
-          <div class="socials reveal">
-            <a href="https://t.me/Ulut_Baatyry_bot" target="_blank" rel="noopener" aria-label="Telegram">TG</a>
-          </div>
         </div>
         <!-- data-api: адрес приёма заявок (бэкенд ulut-baatyry-agent). На сервере заменить на https://<домен>/api/leads -->
         <form class="form reveal" id="form" data-api="http://127.0.0.1:8000/api/leads">
@@ -210,8 +269,8 @@
               <option value="other" data-i18n="opt.other">Другое</option>
             </select>
           </label>
-          <label><span data-i18n="form.message">Сообщение</span><textarea name="message" rows="4" maxlength="2000" placeholder="Расскажите, чем мы можем помочь" data-i18n-attr="placeholder:form.message_ph"></textarea></label>
-          <button class="btn btn--primary btn--full" type="submit" data-i18n="form.submit">Отправить заявку</button>
+          <label><span data-i18n="form.message">Сообщение</span><textarea name="message" rows="3" maxlength="2000" placeholder="Расскажите, чем мы можем помочь" data-i18n-attr="placeholder:form.message_ph"></textarea></label>
+          <button class="btn btn--ink btn--full" type="submit" data-i18n="form.submit">Отправить заявку</button>
           <p class="form__ok" id="formOk" hidden data-i18n="form.ok">Спасибо! Заявка принята, мы свяжемся с вами в течение рабочего дня.</p>
           <p class="form__ok form__ok--err" id="formErr" hidden></p>
           <p class="form__alt" data-i18n="form.alt">Или напишите нам в <a href="https://t.me/Ulut_Baatyry_bot" target="_blank" rel="noopener">Telegram</a> — ответим сразу.</p>
@@ -220,41 +279,14 @@
     </section>
   </main>
 
-  <!-- ============ ПАРТНЁРЫ ============ -->
-  <!-- Строка партнёров по паку «Белек Авто × Улут Баатыры»: высота 36 px, «Белек Авто» — цветной вариант (тёмно-синий + красный).
-       Знаки «Ынтымак Тур» и Belek Nur Invest — новые логотипы, файлы в assets/partners/yntymak-tour/ и assets/partners/belek-nur-invest/.
-       «Ынтымак Тур» и Belek Nur Invest ведут на свои лендинги в папках yntymak/ и belek-nur-invest/. Адреса остальных партнёров — объект SERVICES в script.js; пока адрес пуст, логотип не кликается.
-       Готовые баннеры и PNG «Белек Авто» лежат в assets/partners/belek-auto/ -->
-  <section class="strip" aria-label="Партнёры">
-    <div class="container">
-      <div class="strip__inner reveal">
-        <p class="strip__label" data-i18n="strip.label">Партнёры</p>
-        <div class="strip__logos">
-          <a class="lockup lockup--yntymak" href="yntymak/index.html" target="_blank" rel="noopener" title="Ынтымак Тур — туры по Кыргызстану">
-            <img src="assets/partners/yntymak-tour/yntymak-tour-logo-horizontal.svg" alt="Ынтымак Тур" width="371" height="80" loading="lazy">
-          </a>
-          <a class="lockup lockup--invest" href="belek-nur-invest/index.html" target="_blank" rel="noopener" title="Belek Nur Invest — инвестиционные проекты">
-            <img src="assets/partners/belek-nur-invest/belek-nur-invest-logo-horizontal.svg" alt="Belek Nur Invest" width="300" height="80" loading="lazy">
-          </a>
-          <a class="lockup lockup--avto service" data-service="auto" title="Белек Авто">
-            <i aria-hidden="true"><b></b><b></b><b></b></i>
-            <span>Белек<em>Авто</em></span>
-          </a>
-          <a class="lockup lockup--ndws service" data-service="ndws" title="NDWS">
-            <img src="assets/partners/ndws/ndws-logo.svg" alt="NDWS" width="389" height="148" loading="lazy">
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- ============ FOOTER ============ -->
   <footer class="footer">
+    <div class="footer__word" aria-hidden="true">Улут-Баатыры</div>
     <div class="container footer__inner">
       <div class="footer__brand">
-        <a href="#top" class="logo logo--light"><svg class="logo__mark"><use href="#horseman"/></svg><span class="logo__text">Улут-<br>Баатыры</span></a>
+        <a href="#top" class="logo logo--ink"><svg class="logo__mark" viewBox="0 0 100 73"><use href="#horseman"/></svg><span class="logo__text">Улут-Баатыры</span></a>
         <p data-i18n="footer.slogan">От наследия&nbsp;— к великому будущему.</p>
-        <p class="footer__motto" lang="ky"><svg><use href="#star"/></svg> Ата-Журт үчүн!</p>
+        <p class="footer__motto" lang="ky"><svg viewBox="0 0 24 24"><use href="#star"/></svg> Ата-Журт үчүн!</p>
       </div>
       <div class="footer__cols">
         <div><h5 data-i18n="footer.site">Сайт</h5><a href="#directions" data-i18n="nav.directions">Направления</a><a href="#contact" data-i18n="nav.contact">Контакты</a></div>
@@ -271,13 +303,13 @@
   <!-- data-api: адрес чата (бэкенд ulut-baatyry-agent). На сервере заменить на https://<домен>/api/chat -->
   <div class="chat" id="chat" data-api="http://127.0.0.1:8000/api/chat">
     <button class="chat__launcher" id="chatLauncher" type="button" aria-expanded="false" aria-controls="chatPanel">
-      <svg class="chat__launcher-icon" viewBox="0 0 48 48" aria-hidden="true"><use href="#horseman"/></svg>
+      <svg class="chat__launcher-icon" viewBox="0 0 100 73" aria-hidden="true"><use href="#horseman"/></svg>
       <span class="chat__launcher-text" data-i18n="chat.launch">Задать вопрос</span>
     </button>
 
     <section class="chat__panel" id="chatPanel" role="dialog" aria-label="Чат с помощником" hidden>
       <header class="chat__head">
-        <svg class="chat__avatar" viewBox="0 0 48 48" aria-hidden="true"><use href="#horseman"/></svg>
+        <svg class="chat__avatar" viewBox="0 0 100 73" aria-hidden="true"><use href="#horseman"/></svg>
         <div>
           <strong data-i18n="chat.title">Помощник «Улут-Баатыры»</strong>
           <span data-i18n="chat.sub">Цифровой помощник · отвечает сразу</span>
@@ -298,5 +330,6 @@
 
   <script src="i18n.js"></script>
   <script src="script.js"></script>
+  <script src="home.js"></script>
 </body>
 </html>
