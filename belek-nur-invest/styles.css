@@ -104,6 +104,8 @@ ul { margin: 0; padding: 0; list-style: none; }
 .project h3 { font-size: clamp(1.35rem, 2.3vw, 1.9rem); margin-bottom: 10px; }
 .project p:last-child { margin: 0; color: var(--muted); }
 .project__acts { display: flex; flex-wrap: wrap; gap: 12px; }
+/* проекты без 3D идут ниже, под этой подписью */
+.projects__dev { margin-top: 64px; }
 /* на белой карточке «призрачная» кнопка — синяя обводка, а не белая */
 .project .btn--ghost { color: var(--blue); background: transparent; box-shadow: inset 0 0 0 1.5px rgba(47,91,255,.4); }
 .project .btn--ghost:hover { background: var(--mist); }
