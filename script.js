@@ -3,29 +3,6 @@
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const t = window.ubT || (key => key);  // тексты на языке посетителя, см. i18n.js
 
-  // Заставка: логотип → «Улут Баатыры» → сайт
-  const intro = document.getElementById('intro');
-  const introBtn = document.getElementById('introBtn');
-  const root = document.documentElement;
-  const introActive = intro && !root.classList.contains('intro-seen');
-  const afterIntro = [];  // run once the site is visible
-  if (introActive) {
-    introBtn.focus({ preventScroll: true });
-    const openSite = () => {
-      try { sessionStorage.setItem('introSeen', '1'); } catch (e) {}
-      const finish = () => {
-        root.classList.add('intro-seen');
-        intro.remove();
-        afterIntro.forEach(fn => fn());
-      };
-      if (reduceMotion) { finish(); return; }
-      intro.classList.add('is-opening');
-      setTimeout(() => intro.classList.add('is-closing'), 1300);
-      setTimeout(finish, 2000);
-    };
-    introBtn.addEventListener('click', openSite, { once: true });
-  }
-
   // Шапка: фон при прокрутке
   const header = document.getElementById('header');
   const onScroll = () => header.classList.toggle('is-scrolled', window.scrollY > 30);
@@ -62,7 +39,7 @@
       reveals.forEach(el => el.classList.add('is-in'));
     }
   };
-  if (introActive) afterIntro.push(startReveals); else startReveals();
+  startReveals();
 
   // Фон: на первом экране фото резкое, при прокрутке мягко размывается и слегка светлеет
   const backdrop = document.querySelector('.backdrop');
